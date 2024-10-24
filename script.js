@@ -20,3 +20,8 @@ function prevSlide() {
 
 // Troca automaticamente a cada 3 segundos
 setInterval(nextSlide, 3000);
+// Leva o botoes para as outaras paginas
+function goToPage(page) {
+    window.location.href = page;
+}
+
