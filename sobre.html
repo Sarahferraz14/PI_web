@@ -3,17 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nós</title>
+    <title>Receitas</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="header">
-        <ul class="nav-list">
-            <li><a href="index.html">Inicial</a></li>
-            <li><a href="receitas.html">Receitas</a></li>
-            <li><a href="dietas.html">Dietas</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-        </ul>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicial</a></li>
+                <li><a href="receitas.html">Receitas</a></li>
+                <li><a href="dietas.html">Dietas</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
     </header>
+
+    <h2> Sobre nós: </h2>
+    <p> Somos um grupo de engenheiros da computação da Pontifícia Universidade Católica de Campinas criando nosso próprio site de receitas!!</p>
+    <h2> Quem somos: </h2>
+    <p> Nosso grupo é composto por Eloise dos Santos Ruiz, Felipe Martins Leivas, Gustavo Bordin Correa e Sarah Mendes Ferraz</p>
+    <h2> Sobre o projeto: </h2>
+    <p> Nosso projeto, proposto pelo professor Matias Filho Leme, consiste em montar um site com o tema de nossa preferência utilizando as linguagens HTML, CSS, JavaScript, entre outras.</p>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="1e6eebe2-63aa-4b3d-898a-6465bbb7bcb8">
+    
+        <h2>Formulário para contato</h2>
+    
+        <div class ='caixa'>
+          <p>Seu Nome:</p>
+          <input class=dentro type="text" name="name" placeholder="Digite seu nome" required>
+        
+          <p>Seu e-mail:</p>
+          <input class=dentro type="email" name="email" placeholder="Digite seu e-mail" required>
+        
+          <p>Sua mensagem:</p>
+          <textarea class=dentro name="message" placeholder="Digite sua mensagem"cols="18" rows="2"   required></textarea>
+        </div>
+    
+        <div class ='botao'>
+          <button class=btn onclick="submitAnswers()">Enviar</button> 
+        </div>
+      
+      </form>
+    
+      <footer id = "footer">
+        <p>Todos os direitos reservádos a 
+        Eloise Ruiz, Felipe Leivas, Gustavo Bordin & Sarah Ferraz</p>
+      </footer>
+    
 </body>
 </html>

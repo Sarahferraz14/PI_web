@@ -6,46 +6,63 @@
     <title>Receitas</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="header">
-        <ul class="nav-list">
-            <li><a href="index.html">Inicial</a></li>
-            <li><a href="receitas.html">Receitas</a></li>
-            <li><a href="dietas.html">Dietas</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-        </ul>
-    </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicial</a></li>
+                <li><a href="receitas.html">Receitas</a></li>
+                <li><a href="dietas.html">Dietas</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
     </header>
+
+    <div class="slider-container">
+        <button class="prev">&#10094;</button> <!-- Botão de anterior -->
+        <div class="slider">
+            <img src="https://s2-oglobo.glbimg.com/4JmfXcfq0Q5Bx5m6P2rnhUSMwwE=/0x0:600x400/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2023/7/L/80q3LFQRGK7lYKuWeZHg/disney.jpg" alt="" onclick="showLargeImage(1)">
+            <img src="https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/2/375/433/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/campaign/fl-res-summer-magic/WDW-139511-ARF-for-Summer-Ticket-Offer-640x360-1x1.jpg" alt="" class="active" onclick="showLargeImage(2)">
+            <img src="https://p2.trrsf.com/image/fget/cf/1200/1200/middle/images.terra.com/2023/11/07/ritalobo-reproducaoinstagramritalobo-s13cvq855944.png" alt="" onclick="showLargeImage(3)">
+            <img src="https://i.pinimg.com/736x/a8/56/af/a856af8d69bc511157632169ffc97f95.jpg" alt="" onclick="showLargeImage(4)">
+            <img src="https://st.depositphotos.com/1252248/1623/i/950/depositphotos_16235623-stock-illustration-funny-pig-lies-on-a.jpg" alt="" onclick="showLargeImage(5)">
+            <img src="https://st.depositphotos.com/1252248/1623/i/950/depositphotos_16235623-stock-illustration-funny-pig-lies-on-a.jpg" alt="" onclick="showLargeImage(6)">
+            <img src="https://s2-g1.glbimg.com/BpTq3PjgZi8nlS7l678EN2mh_PY=/0x0:1600x1200/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2024/p/L/F4nuV4TcKRjlQ6S6lnzw/whatsapp-image-2024-09-14-at-18.04.09.jpeg" alt="" onclick="showLargeImage(7)">
+        </div>
+        <button class="next">&#10095;</button> <!-- Botão de próximo -->
+    </div>
+
+    <div class="large-image-container">
+        <img id="largeImage" src="img1.jpg" alt="Imagem Grande">
+        <p id="imageDescription">Imagem 1</p>
+    </div>
+
     <div class="carousel-container">
         <button class="prev" onclick="prevSlide()">&#10094;</button>
-    
         <div class="carousel-slide">
             <a href="receita1.html" class="carousel-item active">
-                <img src="" alt="Receita 1">
+                <img src="imagem1.jpg" alt="">
             </a>
-            <a href="Promocoes.html" class="carousel-item">
-                <img src="" alt="Receita 2">
+            <a href="receita2.html" class="carousel-item">
+                <img src="imagem2.jpg" alt="">
             </a>
-            <a href="Emporio.html" class="carousel-item">
-                <img src="" alt="Receita 3">
+            <a href="receita3.html" class="carousel-item">
+                <img src="imagem3.jpg" alt="">
             </a>
-            <a href="Emporio.html" class="carousel-item">
-                <img src="" alt="Receita 3">
+            <a href="receita4.html" class="carousel-item">
+                <img src="imagem4.jpg" alt="">
             </a>
-            <a href="Emporio.html" class="carousel-item">
-                <img src="" alt="Receita 3">
+            <a href="receita5.html" class="carousel-item">
+                <img src="imagem5.jpg" alt="">
             </a>
-            <a href="Emporio.html" class="carousel-item">
-                <img src="" alt="Receita 3">
+            <a href="receita6.html" class="carousel-item">
+                <img src="imagem6.jpg" alt="">
             </a>
         </div>
- 
         <button class="next" onclick="nextSlide()">&#10095;</button>
     </div>
-</div>
-</section>
 
-    <!-- Link para o arquivo JavaScript -->
-    <script src="script.js"></script>
+    <script src="script.js"></script> 
 </body>
 </html>

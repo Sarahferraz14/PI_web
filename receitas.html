@@ -1,19 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receitas</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receitas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header class="header">
-        <ul class="nav-list">
-            <li><a href="index.html">Inicial</a></li>
-            <li><a href="receitas.html">Receitas</a></li>
-            <li><a href="dietas.html">Dietas</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-        </ul>
-    </header>
+  <header class="header">
+    <a href="index.html" class="logo"></a>
+    <ul class="nav-list">
+      <li><a href="index.html">Inicial</a></li>
+      <li><a href="receitas.html">Receitas</a></li>
+      <li><a href="dietas.html">Dietas</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+    </ul>
+  </header>
+
+  <nav class="main-nav">
+    <form class="search-bar">
+      <input type="text" placeholder="Nome do produto">
+      <button type="submit"></button>
+    </form>
+  </nav>
+
+  <section class="filter">
+    <button onclick="filtrarReceitas('todas')">Todas</button>
+    <button onclick="filtrarReceitas('doce')">Doces</button>
+    <button onclick="filtrarReceitas('salgada')">Salgadas</button>
+    <button onclick="filtrarReceitas('saudavel')">Saudável</button>
+  </section>
+
+  <main class="recipes-container">
+
+    <div class="recipe-field saudavel">
+      <img src="imagens/salada-alface.png" alt="Salada de Alface">
+      <h2>Receita 1</h2>
+      <p>Salada de Alface <br> com Tomate e Cenoura</p>
+      <a href="receita1.html"><button>Ver receita</button></a>
+    </div>
+
+    <div class="recipe-field doce">
+      <img src="imagens/iogurte-banana-mel.png" alt="Iogurte com Banana e Mel">
+      <h2>Receita 2</h2>
+      <p>Iogurte com Banana e <br> Mel</p>
+      <a href="receita2.html"><button>Ver receita</button></a>
+    </div>
+
+    
+    <div class="recipe-field salgada">
+      <img src="imagens/omelete-queijo.png" alt="Omelete de Queijo e Alho">
+      <h2>Receita 4</h2>
+      <p>Omelete de Queijo e Alho</p>
+      <a href="receita4.html"><button>Ver receita</button></a>
+    </div>
+
+    <div class="recipe-field doce">
+      <img src="imagens/smoothie-morango.png" alt="Smoothie de Morango e Banana">
+      <h2>Receita 5</h2>
+      <p>Smoothie de Iogurte com <br> Morango e Banana</p>
+      <a href="Receita5.html"><button>Ver receita</button></a>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

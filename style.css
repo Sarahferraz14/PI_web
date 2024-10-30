@@ -1022,3 +1022,440 @@ footer p {
     height: 450px;
     border: none;
 }
+
+/*corpo do programa */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  /* parte roxinha de cima */
+.header {
+    background-color: #d864ec;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 15px 30px;
+    gap: 50px; 
+    position: relative;
+}
+
+.header .logo {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estilo da lista de navegação */
+.nav-list {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove padding */
+}
+
+/* Links de navegação */
+.nav-list a {
+    display: block; /* Garante que o link ocupe o espaço disponível */
+    padding: 15px 20px; /* Aumenta a área clicável ao redor do link */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 8px;
+    text-align: center; /* Centraliza o texto dentro do link */
+}
+
+/* Hover nos links */
+.nav-list a:hover {
+    background-color: #6c2472d7;
+    color: #bb00ffb4;
+}
+
+  
+  /* Barra de Pesquisa */
+  .main-nav {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    width: 300px;
+    border: 2px solid #ccc;
+    border-radius: 8px 0 0 8px;
+  }
+  
+  .search-bar button {
+    padding: 10px;
+    border: none;
+    background-color: #d864ec;
+    color: #fff;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #b754cb;
+  }
+  
+  /* Grid de Receitas */
+  .recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .recipe-field {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .recipe-field:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .recipe-field img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .recipe-field h2 {
+    font-size: 22px;
+    margin: 15px 0;
+  }
+  
+  .recipe-field p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .recipe-field a button {
+    background-color: #d864ec;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .recipe-field a button:hover {
+    background-color: #b754cb;
+  }
+  
+  /* Rodapé */
+  .footer {
+    background-color: #d864ec;
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+  }
+
+  /* Contato */
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.caixa {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 450px;
+}
+
+p {
+    text-align: center;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+    .dentro {
+        font-family: Georgia, serif;
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        max-height: 200px; 
+        min-height: 46px;
+        padding: 12px;
+        border: 2px solid #919191;
+        border-radius: 5px;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+        overflow-y: auto; 
+    }
+
+.dentro:focus {
+    border-color: #5e86c2;
+    outline: none;
+}
+
+.botao {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #307e9c;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #2990c0;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+}
+
+footer p {
+    margin: 5px 0;
+}
+  
+.recipe-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .recipe-field {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .filter {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .filter button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Básico */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.header {
+    background-color: #d864ec;
+    padding: 15px;
+    text-align: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+}
+
+.slider img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    opacity: 0.5;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.slider img.active {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.large-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.large-image-container img {
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+/* campo para mexer nas imagens da receitas*/
+
+.recipe-field img {
+    width: 100%;
+    max-width: 200px; /* Limite de tamanho máximo */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Ajuste do contêiner para alinhar horizontalmente */
+.recipes-container {
+    display: flex;
+    flex-wrap: wrap; /* Quebra para nova linha se necessário */
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    gap: 20px; /* Espaço entre as receitas */
+    padding: 20px;
+  }
+  
+  /* Card das receitas: sem mudar cores ou fontes */
+  .recipe-field {
+    width: 220px; /* Define uma largura consistente */
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Imagem da receita */
+  .recipe-field img {
+    width: 100%; /* Ocupa toda a largura do card */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Efeito hover: apenas o card do mouse em foco fica visível e sobe */
+  .recipes-container:hover .recipe-field {
+    opacity: 0.5; /* Reduz a opacidade dos outros cards */
+  }
+  
+  .recipes-container:hover .recipe-field:hover {
+    opacity: 1;
+    transform: translateY(-10px); /* O card sobe */
+    z-index: 10;
+  }
+  
+  /* Botões e conteúdo alinhados corretamente */
+  .recipe-field h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .recipe-field p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .recipe-field button {
+    padding: 10px;
+    background-color: #ff69b4;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .recipe-field a {
+    text-decoration: none;
+  }
+  
+  .recipe-field button {
+    all: unset;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ff69b4;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .recipe-field button:hover {
+    background-color: #ff45a3;
+  }
+  
