@@ -88,58 +88,32 @@ body {
     width: 80%;
     margin: 0 auto;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
 }
+.carousel-item img {
+    width: 100%;
+    opacity: 0.6; /* Reduz a visibilidade */
+    max-width: 300px;
+    height: auto;
+    transition: opacity 0.5s, transform 0.5s;
+}
 
-/* Slide com os itens do carrossel */
 .carousel-slide {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
-
-/* Botões de navegação */
-.prev, .next {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-}
-.prev {
-    left: 10px;
-}
-.next {
-    right: 10px;
-}
-
-/* Estilo dos itens */
 .carousel-item {
+    flex: 0 0 auto;
     margin: 0 10px;
     transition: transform 0.5s, opacity 0.5s;
 }
-
-/* Imagem central ativa */
 .carousel-item.active img {
-    width: 400px;
     opacity: 1;
     transform: scale(1.2); /* Aumenta ligeiramente */
-    z-index: 2;
+
 }
 
 /* Imagens laterais */
-.carousel-item img {
-    width: 300px;
-    opacity: 0.6; /* Reduz a visibilidade */
-    transition: opacity 0.5s, transform 0.5s;
-}
 
 .prev, .next {
     position: absolute;
@@ -152,14 +126,10 @@ body {
     cursor: pointer;
 }
 
-.prev {
-    left: 10px;
-}
+.prev { left: 10px;}
+.next {right: 10px;}
 
-.next {
-    right: 10px;
-}
-    /*acaba a parte do carrossel*/
+/*acaba a parte do carrossel*/
 
     /* css da aba receitas receitas */
 body {
@@ -453,15 +423,92 @@ footer p {
 }
 
 .large-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     margin-top: 20px;
 }
 
 .large-image-container img {
-    width: 600px;
-    height: 400px;
-    object-fit: cover;
-    margin-right: 20px;
+  max-width: 100%;
+  height: auto;
+}
+ /*'essa parte mexe no dialog na parte das receitas*/
+.recipe-modal {
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  max-width: 600px;
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  width: 90%;
+}
+
+.recipe-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  padding: 20px;
+  position: relative;
+  max-height: 80vh; /* Altura máxima do modal */
+  overflow-y: auto;
+}
+
+.close-x {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+} 
+
+.close-x:hover {
+  background-color: #f0f0f0;
+  color: #d864ec;
+}
+
+.modal-content h2 {
+  margin-top: 10px;
+  padding-right: 40px;
+}
+
+.recipe-details {
+  margin: 20px 0;
+}
+
+.recipe-details h3 {
+  color: #d864ec;
+  margin: 15px 0 10px 0;
+}
+
+.recipe-details ul,
+.recipe-details ol {
+  margin-left: 20px;
+  line-height: 1.6;
+}
+.recipe-modal[open] {
+  animation: modal-open 0.3s ease-out;
+}
+
+@keyframes modal-open {
+  from {
+      opacity: 0;
+      transform: translate(-50%, -60%);
+  }
+  to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+  }
 }

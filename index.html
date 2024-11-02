@@ -19,6 +19,7 @@
         </nav>
     </header>
 
+    <main>
     <div class="slider-container">
         <button class="prev">&#10094;</button> <!-- Botão de anterior -->
         <div class="slider">
@@ -33,13 +34,13 @@
         <button class="next">&#10095;</button> <!-- Botão de próximo -->
     </div>
 
-    <div class="large-image-container">
+    <section class="large-image-container">
         <img id="largeImage" src="img1.jpg" alt="Imagem Grande">
         <p id="imageDescription">Imagem 1</p>
-    </div>
+    </section>
    
     <!--parte do carrossel, TEM QUE ARRUMAR O CSS-->
-    <div class="carousel-container">
+    <section class="carousel-container">
         <button class="prev" onclick="prevSlide()">&#10094;</button>
         <div class="carousel-slide">
             <a href="receita1.html" class="carousel-item active">
@@ -62,8 +63,8 @@
             </a>
         </div>
         <button class="next" onclick="nextSlide()">&#10095;</button>
-    </div>
-
+    </section>
+    </main>
     <script src="script.js"></script> 
 </body>
 </html>

@@ -18,9 +18,10 @@
     </ul>
   </header>
 
+   <!-- arrumar para filtar as buscas e colocar um lupa no canto direito para ficar bonito -->
   <nav class="main-nav">
     <form class="search-bar">
-      <input type="text" placeholder="Nome do produto">
+      <input type="text" placeholder="Receita">
       <button type="submit"></button>
     </form>
   </nav>
@@ -33,35 +34,127 @@
   </section>
 
   <main class="recipes-container">
-
-    <div class="recipe-field saudavel">
-      <img src="imagens/salada-alface.png" alt="Salada de Alface">
-      <h2>Receita 1</h2>
-      <p>Salada de Alface <br> com Tomate e Cenoura</p>
-      <a href="receita1.html"><button>Ver receita</button></a>
+     
+    <div class="recipe-field doce">
+        <img src="https://cdn.urbano.com.br/uploads/torta-de-limao-282035108-800.jpg" alt="Torta de limão">
+        <h2>Receita 1</h2>
+        <p>Torta de limão</p>
+        <button onclick="openRecipeModal('recipe1')">Ver receita</button>
     </div>
 
-    <div class="recipe-field doce">
-      <img src="imagens/iogurte-banana-mel.png" alt="Iogurte com Banana e Mel">
+    <div class="recipe-field salgado">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinqPGF1wOuk4TTFXoLZAp7QwP0B208NUpxXR0buRXlEVAnZR8znA7pJwk8XLqjxaTAoGOWeI_DENPrWVSOA33zFaaUW7yCIjom6-4WBulX0Gpqi0e8wayfANfd1l3hpuL5CmJCqsfYSJDo/s1600/casaecozinha.com_cozinha_2015_receita_pao_de_minuto.jpg" alt="Pão caseiro">
       <h2>Receita 2</h2>
-      <p>Iogurte com Banana e <br> Mel</p>
-      <a href="receita2.html"><button>Ver receita</button></a>
+      <p>Pão caseiro</p>
+      <button onclick="openRecipeModal('recipe2')">Ver receita</button>
     </div>
 
     
-    <div class="recipe-field salgada">
-      <img src="imagens/omelete-queijo.png" alt="Omelete de Queijo e Alho">
+    <div class="recipe-field doce">
+      <img src="https://cloudfront-us-east-1.images.arcpublishing.com/estadao/THUHXGIGTBLOTH64QNZ3OJ5Z64.jpg" alt="Bolo de cenoura">
       <h2>Receita 3</h2>
-      <p>Omelete de Queijo e Alho</p>
-      <a href="receita3.html"><button>Ver receita</button></a>
+      <p>Bolo de cenoura</p>
+      <button onclick="openRecipeModal('recipe3')">Ver receita</button>
     </div>
 
     <div class="recipe-field doce">
       <img src="imagens/smoothie-morango.png" alt="Smoothie de Morango e Banana">
       <h2>Receita 4</h2>
       <p>Smoothie de Iogurte com <br> Morango e Banana</p>
-      <a href="Receita4.html"><button>Ver receita</button></a>
+      <button onclick="openRecipeModal('recipe4')">Ver receita</button>
     </div>
+
+    <div class="recipe-field salgada">
+      <img src="https://i.panelinha.com.br/i1/64-bk-5577-risoto-de-limao-siciliano.webp" alt="">
+      <h2>Receita 5</h2>
+      <p>Risoto de limão siciliano</p>
+      <button onclick="openRecipeModal('recipe5')">Ver receita</button>
+    </div>
+
+    <div class="recipe-field doce">
+      <img src="imagens/smoothie-morango.png" alt="Smoothie de Morango e Banana">
+      <h2>Receita 4</h2>
+      <p>Smoothie de Iogurte com <br> Morango e Banana</p>
+      <button onclick="openRecipeModal('recipe6')">Ver receita</button>
+    </div>
+
+    <div class="recipe-field doce">
+      <img src="imagens/smoothie-morango.png" alt="Smoothie de Morango e Banana">
+      <h2>Receita 4</h2>
+      <p>Smoothie de Iogurte com <br> Morango e Banana</p>
+      <button onclick="openRecipeModal('recipe7')">Ver receita</button>
+    </div>
+
+    <div class="recipe-field doce">
+      <img src="imagens/smoothie-morango.png" alt="Smoothie de Morango e Banana">
+      <h2>Receita 4</h2>
+      <p>Smoothie de Iogurte com <br> Morango e Banana</p>
+      <button onclick="openRecipeModal('recipe8')">Ver receita</button>
+    </div>
+
+<dialog id="recipe1" class="recipe-modal">
+  <div class="modal-content">
+      <button class="close-x" onclick="closeRecipeModal('recipe1')">&times;</button>
+      <h2>Salada de Alface com Tomate e Cenoura</h2>
+      <div class="recipe-details">
+          <h3>Ingredientes:</h3>
+          <ul>
+              <li>Alface</li>
+              <li>Tomate</li>
+              <li>Cenoura</li>
+              <li>Azeite</li>
+              <li>Sal a gosto</li>
+          </ul>
+          
+          <h3>Modo de Preparo:</h3>
+          <ol>
+              <li>Lave bem todos os ingredientes</li>
+              <li>Pique o alface, tomate e cenoura</li>
+              <li>Misture tudo em uma tigela</li>
+              <li>Tempere com azeite e sal a gosto</li>
+          </ol>
+      </div>
+  </div>
+</dialog>
+
+<dialog id="recipe5" class="recipe-modal">
+  <div class="modal-content">
+      <button class="close-x" onclick="closeRecipeModal('recipe5')">&times;</button>
+      <h2>Risoto de limão siciliano</h2>
+      <div class="recipe-details">
+          <h3>Ingredientes:</h3>
+          <ul>
+              <li>2 xícaras (chá) de arroz para risoto (arbóreo)</li>
+              <li>1,5 litro de caldo de legumes caseiro</li>
+              <li>1 cebola</li>
+              <li>1 alho-poró</li>
+              <li>1 talo de salsão (sem as folhas)</li>
+              <li>½ xícara (chá) de vinho branco seco</li>
+              <li>1 gema</li>
+              <li>raspas e caldo de 1 limão</li>
+              <li>2 colheres (sopa) de manteiga</li>
+              <li>2 colheres (sopa) de azeite</li>
+              <li>1 xícara (chá) de queijo parmesão ralado</li>
+              <li>sal e pimenta-do-reino moída na hora a gosto</li>
+              <li>salsinha picada a gosto para servir</li>
+              <li>rodelas de 1 limão-siciliano grelhadas para servir</li>
+          </ul>
+          
+          <h3>Modo de Preparo:</h3>
+          <ol>
+              <li>Corte o talo de alho-poró ao meio, no sentido do comprimento, e fatie as metades em meias-luas finas — você pode congelar as folhas para preparar um caldo caseiro e reservar as raízes para preparar raiz de alho-poró frita. Transfira o alho-poró fatiado para uma peneira e lave bem sob água corrente. Lave, seque e corte o talo de salsão em cubinhos — reserve a folha para o cozimento do risoto. Descasque e pique fino a cebola.</li>
+              <li>Numa tigela, coloque as raspas e o caldo do limão, a gema e o queijo parmesão. Misture bem com uma espátula e reserve — a mistura possui um aspecto talhado, mas é assim mesmo.</li>
+              <li>Numa panela, leve o caldo de legumes ao fogo alto. Quando ferver, abaixe o fogo e mantenha o caldo aquecido durante todo o preparo do risoto.</li>
+              <li>Leve outra panela grande ao fogo médio para aquecer. Regue com 2 colheres (sopa) de azeite, adicione o salsão, a cebola e o alho-poró. Tempere com uma pitada de sal e refogue até murchar, por cerca de 3 minutos. Acrescente o arroz e mexa bem por 3 minutos para envolver os grãos com azeite. Tempere com sal e pimenta-do-reino, lembre-se de que o caldo caseiro não leva sal</li>
+              <li>Regue com o vinho e misture até secar. Adicione 2 conchas do caldo e misture bem. Deixe cozinhar, mexendo de vez em quando, até secar. Repita o procedimento, adicionando o caldo, de concha em concha, mexendo, até o risoto ficar no ponto – o grão deve estar cozido mas ainda durinho no centro (al dente).</li>
+              <li>Atenção: na última adição de caldo, misture e desligue o fogo. Não deixe secar completamente, o risoto deve ficar bem úmido. Acrescente a manteiga e a mistura de gema com queijo e limão. Sirva a seguir com salsinha picada e rodelas de limão douradas.</li>
+          </ol>
+
+          <h3>Rodelas de limão siciliano grelhadas:</h3>
+            <li>Lave, seque e corte 1 limão siciliano em rodelas finas. Leve uma frigideira média ao fogo médio para aquecer. Regue com ½ colher (chá) de azeite e disponha as rodelas de limão uma ao lado da outra. Deixe dourar por 2 minutos de cada lado e reserve numa travessa.</li>
+      </div>
+  </div>
+</dialog>
 
   </main>
 

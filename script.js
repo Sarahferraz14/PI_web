@@ -78,4 +78,23 @@ function filtrarReceitas(categoria) {
       }
     });
   }
-  
+  // Funções para abrir e fechar o modal
+function openRecipeModal(recipeId) {
+  const modal = document.getElementById(recipeId);
+  modal.showModal();
+}
+
+function closeRecipeModal(recipeId) {
+  const modal = document.getElementById(recipeId);
+  modal.close();
+}
+
+// Fechar modal quando clicar fora dele
+document.addEventListener('click', (e) => {
+  const modals = document.querySelectorAll('.recipe-modal');
+  modals.forEach(modal => {
+      if (e.target === modal) {
+          modal.close();
+      }
+  });
+});
