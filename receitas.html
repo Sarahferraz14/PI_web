@@ -20,10 +20,12 @@
   </header>
 
    <!-- arrumar para filtar as buscas e colocar um lupa no canto direito para ficar bonito -->
-  <nav class="main-nav">
-    <form class="search-bar">
-      <input type="text" placeholder="Receita">
-      <button type="submit"></button>
+   <nav class="main-nav">
+    <form class="search-bar" onsubmit="filterSearch(event)">
+      <input type="text" id="searchInput" placeholder="Buscar receita...">
+      <button type="submit">
+        <span class="icon"></span>
+      </button>
     </form>
   </nav>
 
