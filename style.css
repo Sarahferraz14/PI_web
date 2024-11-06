@@ -60,20 +60,33 @@ body {
     margin: 20px 0;
   }
   
-  .search-bar input {
-    padding: 10px;
-    width: 300px;
-    border: 2px solid #ccc;
-    border-radius: 8px 0 0 8px;
+  .search-bar input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
   }
   
   .search-bar button {
-    padding: 10px;
-    border: none;
-    background-color: #d864ec;
-    color: #fff;
-    border-radius: 0 8px 8px 0;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-left: none;
+    background-color: #d161e8;
     cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search-bar button .icon {
+    width: 16px;
+    height: 16px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/622/622669.png'); /* Ícone de lupa */
+    background-size: contain;
+    background-repeat: no-repeat;
   }
   
   .search-bar button:hover {
@@ -136,6 +149,7 @@ body {
 
 .prev { left: 10px;}
 .next {right: 10px;}
+
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -144,6 +158,9 @@ body {
   .carousel-item {
       flex: 0 0 100%;
   }
+  .prev, .next {
+    font-size: 16px;
+}
 }
 
 /*acaba a parte do carrossel*/

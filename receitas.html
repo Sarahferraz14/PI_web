@@ -20,10 +20,12 @@
   </header>
 
    <!-- arrumar para filtar as buscas e colocar um lupa no canto direito para ficar bonito -->
-  <nav class="main-nav">
-    <form class="search-bar">
-      <input type="text" placeholder="Receita">
-      <button type="submit"></button>
+   <nav class="main-nav">
+    <form class="search-bar" onsubmit="filterSearch(event)">
+      <input type="text" id="searchInput" placeholder="Buscar receita...">
+      <button type="submit">
+        <span class="icon"></span>
+      </button>
     </form>
   </nav>
 
@@ -43,7 +45,7 @@
         <button onclick="openRecipeModal('recipe1')">Ver receita</button>
     </div>
 
-    <div class="recipe-field salgado">
+    <div class="recipe-field salgada">
       <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinqPGF1wOuk4TTFXoLZAp7QwP0B208NUpxXR0buRXlEVAnZR8znA7pJwk8XLqjxaTAoGOWeI_DENPrWVSOA33zFaaUW7yCIjom6-4WBulX0Gpqi0e8wayfANfd1l3hpuL5CmJCqsfYSJDo/s1600/casaecozinha.com_cozinha_2015_receita_pao_de_minuto.jpg" alt="Pão caseiro">
       <h2>Pão caseiro</h2>
       <p>Pão caseiro</p>
@@ -86,11 +88,32 @@
       <button onclick="openRecipeModal('recipe7')">Ver receita</button>
     </div>
 
+    <div class="recipe-field salgada">
+      <img src="https://th.bing.com/th/id/R.63080b9e272727d98774043933b62d4e?rik=GrWXEovxt22pug&pid=ImgRaw&r=0" alt="Massa de pizza">
+      <h2>Massa de pizza</h2>
+      <p>Massa de pizza</p>
+      <button onclick="openRecipeModal('recipe12')">Ver receita</button>
+    </div>
+
     <div class="recipe-field doce">
-      <img src="imagens/smoothie-morango.png" alt="Smoothie de Morango e Banana">
-      <h2>Receita 4</h2>
-      <p>Smoothie de Iogurte com <br> Morango e Banana</p>
-      <button onclick="openRecipeModal('recipe8')">Ver receita</button>
+      <img src="https://th.bing.com/th/id/OIP.S2OemNlGnH7Z-Rrm5-JMKwHaEx?w=272&h=180&c=7&r=0&o=5&pid=1.7" alt="Brigadeirão">
+      <h2>Brigadeirão</h2>
+      <p>Brigadeirão</p>
+      <button onclick="openRecipeModal('recipe9')">Ver receita</button>
+    </div>
+
+    <div class="recipe-field doce">
+      <img src="https://th.bing.com/th/id/OIP.uXp96TVAAIQBRJ5fc-FIHgHaG-?rs=1&pid=ImgDetMain" alt="Pudim de leite condensado">
+      <h2>Pudim de leite condensado</h2>
+      <p>Pudim de leite condensado</p>
+      <button onclick="openRecipeModal('recipe13')">Ver receita</button>
+    </div> 
+
+    <div class="recipe-field salgada">
+      <img src="https://www.canadainbox.com/wp-content/webp-express/webp-images/uploads/2021/03/como-fazer-poutine-1-683x1024.jpg.webp" alt="Poutine">
+      <h2>Poutine</h2>
+      <p>Poutine</p>
+      <button onclick="openRecipeModal('recipe14')">Ver receita</button>
     </div>
 
 <dialog id="recipe1" class="recipe-modal">
@@ -396,6 +419,176 @@
   </div>
 </dialog>
   </main>
+
+  <dialog id="recipe11" class="recipe-modal">
+    <div class="modal-content">
+        <button class="close-x" onclick="closeRecipeModal('recipe11')">&times;</button>
+        <h2>Massa de pizza</h2>
+  
+        <div class="recipe-info">
+          <span><i class="fas fa-clock"></i> Preparo: 15 minutos</span>
+          <span><i class="fas fa-utensils"></i> Porções: 5 porções</span>
+          <span><i class="fas fa-signal"></i> Dificuldade: Fácil</span>
+          <span><i class="fas fa-dollar-sign"></i> Custo: Baixo</span>
+        </div>
+  
+        <div class="recipe-details">
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>1 kg de farinha de trigo</li>
+                <li>3 xícaras de água morna</li>
+                <li>1 colher (chá) de sal</li>
+                <li>30 g de fermento biológico</li>
+                <li>3/4 xícaras de óleo</li>
+                <li>1 colher (chá) de açúcar</li>
+            </ul>
+           
+            <h3>Modo de Preparo:</h3>
+            <ol>
+                <li>Misture o fermento, o sal e o açúcar em um pouco de água morna, até que o fermento esteja completamente dissolvido.</li>
+                <li>Em seguida, adicione metade da medida de farinha de trigo, o óleo e mexa até criar uma consistência pastosa.</li>
+                <li>Acrescente o restante da farinha de trigo, a água morna e misture bem.</li>
+                <li>Assim que a massa desgrudar das mãos, deixe crescer por 30 minutos.</li>
+                <li>Abra os discos, fure a massa com um garfo e pincele o molho.</li>
+                <li>Leve ao forno médio (180° C), preaquecido, por 15 minutos.</li>
+            </ol>
+        </div>
+    </div>
+  </dialog>
+
+  <dialog id="recipe9" class="recipe-modal">
+    <div class="modal-content">
+        <button class="close-x" onclick="closeRecipeModal('recipe9')">&times;</button>
+        <h2>Brigadeirão</h2>
+  
+        <div class="recipe-info">
+          <span><i class="fas fa-clock"></i> Preparo: 1 hora e 15 minutos</span>
+          <span><i class="fas fa-utensils"></i> Porções: 8 porções</span>
+          <span><i class="fas fa-signal"></i> Dificuldade: Fácil</span>
+          <span><i class="fas fa-dollar-sign"></i> Custo: Baixo</span>
+        </div>
+  
+        <div class="recipe-details">
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>2 latas de leite condensado</li>
+                <li>1 colher de manteiga</li>
+                <li>4 ovos</li>
+                <li>1 lata de leite de vaca (use a lata de leite condensado como medida)</li>
+                <li>200 g de chocolate em pó</li>
+                <li>açúcar suficiente para polvilhar a forma</li>
+            </ul>
+           
+            <h3>Modo de Preparo:</h3>
+            <ol>
+                <li>Bata o leite condensado, o leite de vaca, a manteiga, o chocolate em pó e os ovos no liquidificador</li>
+                <li>Unte uma forma com buraco no meio e polvilhe com açúcar.</li>
+                <li>Coloque a mistura liquidificada na forma e leve ao forno para assar em banho-maria por mais ou menos 1 hora, a 150°C.</li>
+            </ol>
+        </div>
+    </div>
+  </dialog>
+
+  <dialog id="recipe13" class="recipe-modal">
+    <div class="modal-content">
+        <button class="close-x" onclick="closeRecipeModal('recipe13')">&times;</button>
+        <h2>Pudim de leite condensado</h2>
+  
+        <div class="recipe-info">
+          <span><i class="fas fa-clock"></i> Preparo: 50 minutos</span>
+          <span><i class="fas fa-utensils"></i> Porções: 8 porções</span>
+          <span><i class="fas fa-signal"></i> Dificuldade: Fácil</span>
+          <span><i class="fas fa-dollar-sign"></i> Custo: Baixo</span>
+        </div>
+  
+        <div class="recipe-details">
+            <h3>Ingredientes:</h3>
+            <h4>Pudim</h4>
+            <ul>
+                <li>2 latas de leite condensado</li>
+                <li>1 lata de leite (medida da lata de leite condensado)</li>
+                <li>3 ovos inteiros</li>
+            </ul>
+
+            <h4>Calda</h4>
+            <ul>
+                <li>1 xícara (chá) de açúcar</li>
+                <li>1/2 xícara de água</li>
+            </ul>
+
+            <h3>Modo de Preparo:</h3>
+            <h4>Pudim</h4>
+            <ol>
+                <li>Primeiro, bata bem os ovos no liquidificador.</li>
+                <li>Acrescente o leite condensado e o leite, e bata novamente.</li>
+            </ol>
+            <h4>Calda</h4>
+            <ol>
+                <li>Derreta o açúcar na panela até ficar moreno, acrescente a água e deixe engrossar.</li>
+                <li>Coloque em uma forma redonda e despeje a massa do pudim por cima.</li>
+                <li>Asse em forno médio por 45 minutos, com a assadeira redonda dentro de uma maior com água.</li>
+                <li>Espete um garfo para ver se está bem assado.</li>
+                <li>Deixe esfriar e desenforme.</li>
+            </ol>
+        </div>
+    </div>
+  </dialog>
+
+  <dialog id="recipe14" class="recipe-modal">
+    <div class="modal-content">
+        <button class="close-x" onclick="closeRecipeModal('recipe14')">&times;</button>
+        <h2>Poutine</h2>
+  
+        <div class="recipe-info">
+          <span><i class="fas fa-clock"></i> Preparo: 1 Hora</span>
+          <span><i class="fas fa-utensils"></i> Porções: 8 porções</span>
+          <span><i class="fas fa-signal"></i> Dificuldade: Medio</span>
+          <span><i class="fas fa-dollar-sign"></i> Custo: Medio</span>
+        </div>
+  
+        <div class="recipe-details">
+            <h3>Ingredientes:</h3>
+            <h4>Molho (gravy)</h4>
+            <ul>
+                <li>3 colheres (sopa) de amido de milho (maisena)</li>
+                <li>2 colheres (sopa) de água</li>
+                <li>6 colheres (sopa) de manteiga sem sal</li>
+                <li>1/4 de xícara de farinha de trigo</li>
+                <li>2 + 1/2 xícaras de caldo de carne (pode ser substituído por 1 cubo de caldo de carne diluído em 2 + 1/2 xícaras de água)</li>
+                <li>1 xícara de caldo de galinha (pode ser substituído por 1/2 cubo de caldo de galinha em 1 xícara de água)</li>
+                <li>Sal e pimenta a gosto (opcional)</li>
+            </ul>
+
+            <h4>Batatas</h4> 
+            <ul>
+              <li>4 batatas médias (ou 1 saco de batatas congeladas pré fritas)</li>
+              <li>Óleo para fritar (é possível preparar no forno, especialmente se forem pré fritas)</li>
+            </ul>
+
+            <h4>Queijo</h4> 
+              <li>1 +1/2 xícaras de muçarela cortada em pedaços</li>
+           
+            <h3>Modo de Preparo:</h3>
+            <h4>Molho (gravy)</h4>
+            <ol>
+                <li>Em uma tigela pequena misture o amido de milho e a água. Reserve.</li>
+                <li>Em uma frigideira derreta a manteiga. Adicione a farinha aos poucos e cozinhe mexendo bem, por aproximadamente 5 minutos, até que a misture fique dourada.</li>
+                <li>Adicione os caldos de carne e galinha e mexa até ferver. Adicione a mistura de água e amido, misture e deixe em fogo brando por aproximadamente 5 minutos, até a mistura engrossar. Coloque pimenta, se desejar, e veja se é necessário colocar sal.</li>
+            </ol>
+
+            <h4>Batatas</h4>
+            <ol>
+              <li>Se você estiver preparando as batatas do zero, faça da maneira que você está acostumado, se desejar não é necessário tirar a casca.</li>
+              <li>Se você estiver usando batatas congeladas pré fritas você pode optar por fritá-las ou preparar no forno. Prepare de acordo com as instruções do pacote.</li>
+            </ol>
+
+            <h3>Montando o Poutine:</h3>
+            <ul>
+                <li>Coloque as batatas fritas em um prato grande ou em pratos individuais. Coloque um pouco de sal. Coloque molho quente por cima e misture um pouco. Coloque os pedaços de queijo por cima e um pouco mais de molho. Coloque por cima um pouco de salsinha picada ou pimenta, se desejar. Sirva imediatamente.</li>
+            </ul>
+        </div>
+    </div>
+  </dialog>
 
   <script src="script.js"></script>
 </body>

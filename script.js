@@ -187,6 +187,33 @@ function initializeSearch() {
   }, 300));
 }
 
+function filterRecipes() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const recipes = document.querySelectorAll('.recipe-field');
+
+  recipes.forEach(recipe => {
+    // Obtém a categoria e o nome da receita
+    const recipeCategory = recipe.classList.contains('doce') ? 'doce' : 'salgado';
+    const recipeName = recipe.querySelector('h2').textContent.toLowerCase();
+
+    // Exibe todas as receitas se o campo de busca estiver vazio
+    if (!query) {
+      recipe.style.display = 'block';
+    } 
+    // Exibe a receita se a categoria ou o nome corresponder ao termo de busca
+    else if (recipeCategory.includes(query) || recipeName.includes(query)) {
+      recipe.style.display = 'block';
+    } 
+    // Oculta a receita caso não haja correspondência
+    else {
+      recipe.style.display = 'none';
+    }
+  });
+}
+
+// Adiciona o evento de entrada para atualizar a cada tecla digitada
+document.getElementById('searchInput').addEventListener('input', filterRecipes);
+
 // Sistema de filtros
 function initializeFilters() {
   const filterButtons = document.querySelectorAll('.filter button');
