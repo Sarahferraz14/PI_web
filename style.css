@@ -149,6 +149,7 @@ body {
 
 .prev { left: 10px;}
 .next {right: 10px;}
+
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -157,6 +158,9 @@ body {
   .carousel-item {
       flex: 0 0 100%;
   }
+  .prev, .next {
+    font-size: 16px;
+}
 }
 
 /*acaba a parte do carrossel*/
