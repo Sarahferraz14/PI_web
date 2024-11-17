@@ -332,3 +332,25 @@ function showNotification(message, type = 'info') {
       notification.remove();
   }, 3000);
 }
+function openDietModal(dietId) {
+  document.getElementById(dietId).style.display = "block";
+}
+
+function closeModal(dietId) {
+  document.getElementById(dietId).style.display = "none";
+}
+
+function filterSearch(event) {
+  event.preventDefault();
+  const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+  const dietFields = document.querySelectorAll('.diet-field');
+  
+  dietFields.forEach(function(diet) {
+    const title = diet.querySelector('h2').textContent.toLowerCase();
+    if (title.includes(searchQuery)) {
+      diet.style.display = 'block';
+    } else {
+      diet.style.display = 'none';
+    }
+  });
+}

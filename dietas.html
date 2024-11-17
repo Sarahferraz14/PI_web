@@ -1,21 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dietas</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Dietas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header class="header">
-        <ul class="nav-list">
-            <li><a href="index.html">Inicial</a></li>
-            <li><a href="receitas.html">Receitas</a></li>
-            <li><a href="dietas.html">Dietas</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-        </ul>
-    </header>
 
-    <!--vegetariana, vegana, light, fitness, diet, sem glúten, sem lactose-->
+<body>
+  <header class="header">
+    <a href="index.html" class="logo"></a>
+    <ul class="nav-list">
+      <li><a href="index.html">Inicial</a></li>
+      <li><a href="receitas.html">Receitas</a></li>
+      <li><a href="dietas.html">Dietas</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+    </ul>
+  </header>
+
+  <!-- Barra de pesquisa -->
+  <nav class="main-nav">
+    <form class="search-bar" onsubmit="filterSearch(event)">
+      <input type="text" id="searchInput" placeholder="Buscar dieta...">
+      <button type="submit">
+        <span class="icon"><i class="fas fa-search"></i></span>
+      </button>
+    </form>
+  </nav>
+
+  <main class="diets-container">
+    <!-- Dietas -->
+    <div class="diet-field low-carb">
+      <img src="https://example.com/low-carb.jpg" alt="Low Carb Diet">
+      <h2>Low Carb</h2>
+      <p>Dieta com baixo carboidrato, focada em proteínas e gorduras saudáveis.</p>
+      <button onclick="openDietModal('diet1')">Ver detalhes</button>
+    </div>
+
+    <div class="diet-field vegan">
+      <img src="https://example.com/vegan.jpg" alt="Vegan Diet">
+      <h2>Vegan</h2>
+      <p>Dieta sem produtos de origem animal, rica em vegetais e proteínas vegetais.</p>
+      <button onclick="openDietModal('diet2')">Ver detalhes</button>
+    </div>
+
+    <div class="diet-field mediterranean">
+      <img src="https://example.com/mediterranean.jpg" alt="Mediterranean Diet">
+      <h2>Dieta Mediterrânea</h2>
+      <p>Dieta rica em frutas, vegetais, azeite de oliva e peixes.</p>
+      <button onclick="openDietModal('diet3')">Ver detalhes</button>
+    </div>
+  </main>
+
+  <!-- Modal de detalhes -->
+  <div id="diet1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('diet1')">&times;</span>
+      <h2>Low Carb</h2>
+      <p>Detalhes sobre a dieta Low Carb...</p>
+    </div>
+  </div>
+
+  <div id="diet2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('diet2')">&times;</span>
+      <h2>Vegan</h2>
+      <p>Detalhes sobre a dieta Vegan...</p>
+    </div>
+  </div>
+
+  <div id="diet3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('diet3')">&times;</span>
+      <h2>Dieta Mediterrânea</h2>
+      <p>Detalhes sobre a dieta Mediterrânea...</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

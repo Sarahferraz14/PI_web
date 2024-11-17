@@ -898,3 +898,50 @@ button:hover {
   justify-content: center;
   align-items: center;
 }
+
+
+.diets-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.diet-field {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  margin: 20px;
+  text-align: center;
+}
+
+.diet-field img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.diet-field h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.diet-field p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.diet-field button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 0 0 10px 10px;
+}
+
+.diet-field button:hover {
+  background-color: #45a049;
+}
