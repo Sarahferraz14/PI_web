@@ -21,19 +21,19 @@
 
    <!-- arrumar para filtar as buscas e colocar um lupa no canto direito para ficar bonito -->
    <nav class="main-nav">
-    <form class="search-bar" onsubmit="filterSearch(event)">
+    <form class="search-bar" onsubmit="buscarReceita()">
       <input type="text" id="searchInput" placeholder="Buscar receita...">
-      <button type="submit">
+      <button onclick="buscarReceita()">
         <span class="icon"></span>
       </button>
     </form>
   </nav>
 
   <section class="filter">
-    <button onclick="filtrarReceitas('todas')">Todas</button>
-    <button onclick="filtrarReceitas('doce')">Doces</button>
-    <button onclick="filtrarReceitas('salgada')">Salgadas</button>
-    <button onclick="filtrarReceitas('saudavel')">Saudável</button>
+    <button onclick="botaoFiltro('todas')">Todas</button>
+    <button onclick="botaoFiltro('doce')">Doces</button>
+    <button onclick="botaoFiltro('salgada')">Salgadas</button>
+    <button onclick="botaoFiltro('saudavel')">Saudável</button>
   </section>
 
   <main class="recipes-container">
@@ -143,6 +143,7 @@
       <p>Cheesecake Romeu e Julieta</p>
       <button onclick="openRecipeModal('recipe15')">Ver Receita</button>
     </div>
+    </main>
 
 <dialog id="recipe1" class="recipe-modal">
   <div class="modal-content">
@@ -803,8 +804,7 @@
         </div>
     </div>
   </dialog>
-  
-</main>
+
 
   <script src="script.js"></script>
 </body>
