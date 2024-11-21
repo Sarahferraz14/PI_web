@@ -254,31 +254,6 @@ function initializeModals() {
   });
 }
 
-// Menu responsivo
-function handleResponsiveMenu() {
-  const menuButton = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('nav');
-
-  if (!menuButton || !nav) return;
-
-  menuButton.addEventListener('click', () => {
-      nav.classList.toggle('active');
-  });
-}
-
-// Utilidades
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-      const later = () => {
-          clearTimeout(timeout);
-          func(...args);
-      };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-  };
-}
-
 // Lazy loading de imagens
 function lazyLoadImages() {
   const images = document.querySelectorAll('img[data-src]');
