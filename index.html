@@ -8,18 +8,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <header class="header">
-        <nav>
-            <ul class="nav-list">
-                <li><a href="index.html">Inicial</a></li>
-                <li><a href="receitas.html">Receitas</a></li>
-                <li><a href="dietas.html">Dietas</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <main>
       <div class="carousel-container">
         <button class="carousel-button left" onclick="moveCarousel(-1)">&#10094;</button>
@@ -38,9 +26,20 @@
         </div>
         <button class="carousel-button right" onclick="moveCarousel(1)">&#10095;</button>
       </div>
+      </main>
     </br>
-      <h2>Eai, se interessou por alguma comida??</h2>
-    </main>
+      <h3>  Eai, se interessou por alguma comida? Clique e veja mais!</h2>
+  </br>
+  <h2>Veja também em nosso site: </h3>
+  <nav>
+      <ul class="site-list">
+        <li><a href="receitas.html">Receitas >></a></li>
+        <br>
+        <li><a href="dietas.html">Dietas >></a></li>
+        <br>
+        <li><a href="sobre.html">Sobre >></a></li>
+    </ul>
+    </nav>
     <dialog id="recipe1" class="recipe-modal">
       <div class="modal-content">
           <button class="close-x" onclick="closeRecipeModal('recipe1')">&times;</button>

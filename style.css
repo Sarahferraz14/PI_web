@@ -41,18 +41,47 @@ body {
     font-weight: bold;
     font-size: 18px;
     color: #333;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, tranform 0.3s;
     border-radius: 8px;
     text-align: center; /* Centraliza o texto dentro do link */
 }
 
 /* Hover nos links */
 .nav-list a:hover {
-    background-color: #6c2472d7;
     color: #bb00ffb4;
+    background-color: rgba(255,255,255,0.15);
+    transform: translateY(-2px); /* Movimento mais sutil */
 }
 
-  
+  /* Estilo da lista de navegação */
+.site-list {
+  gap: 30px;
+  list-style: none;
+  margin: 30px; /* Remove margens */
+  padding: 0; /* Remove padding */
+}
+
+/* Links de navegação */
+.site-list a {
+  padding: 10px 15px; /* Aumenta a área clicável ao redor do link */
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  font-size: 26px;
+  color: #bb00ffb4;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  border-radius: 8px;
+  text-align: center; /* Centraliza o texto dentro do link */
+}
+
+/* Hover nos links */
+.site-list a:hover {
+  background-color: #a7a7a7;
+  color: #6c2472d7;
+  background-color: rgba(255,255,255,0.15);
+  transform: translateY(5px); /* Movimento mais sutil */
+}
+
   /* Barra de Pesquisa */
   .main-nav {
     display: flex;
@@ -101,7 +130,7 @@ body {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 100%;
   max-width: 800px;
   margin: auto;
   overflow: hidden;
@@ -121,6 +150,7 @@ body {
   cursor: pointer;
   margin: 0 5px;
   object-fit: cover;
+  max-height: 300px;
 }
 .carousel-button {
   position: absolute;
@@ -491,28 +521,6 @@ body {
   line-height: 1.6;
 }
 
-.nav-list {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  list-style: none;
-}
-
-.nav-list a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 10px 20px;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-}
-
-.nav-list a:hover {
-  background-color: rgba(255,255,255,0.2);
-  transform: translateY(-2px);
-}
-
 /* Cards de receitas */
 .recipes-container {
   padding: 40px;
@@ -633,14 +641,8 @@ button {
 button:hover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.1); /* Sombra um pouco mais forte no hover */
 }
-.recipe-field, button, .nav-list a {
+.recipe-field, button, .nav-list a, .site-list a {
   transition: all 0.2s ease-out;
-}
-
-/* Hover nos links do menu */
-.nav-list a:hover {
-  background-color: rgba(255,255,255,0.15);
-  transform: translateY(-1px); /* Movimento mais sutil */
 }
 
 /* Ajuste no backdrop do modal */
