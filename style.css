@@ -182,9 +182,12 @@ body {
     padding: 1em;
     background-color: white;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     text-align: center;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
   }
     
   /* Efeito hover: apenas o card do mouse em foco fica visível e sobe */
@@ -475,14 +478,6 @@ body {
   margin: 0 auto;
 }
 
-.recipe-field {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-}
-
 .recipe-field:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(216,100,236,0.15);
@@ -659,9 +654,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.recipe-field {
-  animation: fadeIn 0.5s ease-out;
-}
 /* Notificações */
 .notification {
   position: fixed;
@@ -704,7 +696,12 @@ body {
   align-items: center;
 }
 
-#no_results {
-  display: none;
-  text-align: center;
+.no_results {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 0 20px;
+  border: 0px;
+  background-color: #f9f9f9;
 }
