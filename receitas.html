@@ -19,15 +19,15 @@
     </ul>
   </header>
 
-   <!-- arrumar para filtar as buscas e colocar um lupa no canto direito para ficar bonito -->
-   <nav class="main-nav">
-    <form class="search-bar" onsubmit="buscarReceita()">
-      <input type="text" id="searchInput" placeholder="Buscar receita...">
-      <button onclick="buscarReceita()">
+  <div id="container">
+    <div class="input-group">
+      <input id="search" type="text" class="input-field" placeholder="Buscar receita...">
+      <div class="input-icon">
         <span class="icon"></span>
-      </button>
-    </form>
-  </nav>
+      </div>
+    </div>
+  </div>
+
 
   <section class="filter">
     <button onclick="botaoFiltro('todas')">Todas</button>
@@ -805,6 +805,11 @@
     </div>
   </dialog>
 
+  <dialog id="no_results" class="no_results"> 
+  <div class="no_results">
+    <p>Nenhum resultado encontrado para a busca.</p>
+  </div>
+</dialog>
 
   <script src="script.js"></script>
 </body>

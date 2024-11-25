@@ -3,6 +3,36 @@ const imagesToShow = 4; // Número de imagens visíveis ao mesmo tempo
 const images = document.querySelectorAll(".carousel img");
 const carousel = document.querySelector(".carousel");
 
+const searchInput = document.getElementById('search');
+
+searchInput.addEventListener('input', (event) => {
+  const value = event.target.value
+
+  const itens = document.querySelectorAll('.recipe-field');
+  const noResults = document.getElementById('no_results');
+
+  let hasResults = false;
+  
+  itens.forEach(recipe => {
+    if(formaString(recipe.textContent).indexOf(value) !== -1) {
+      recipe.style.display = 'block';
+
+      hasResults = true;
+    } else {
+      recipe.style.display = 'none';
+    }
+ })
+
+ if (hasResults)  {
+  noResults.style.display = 'none';
+ } else {
+  noResults.style.display = 'block';
+ }
+});
+
+function formaString(value) {
+    return value.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
 function moveCarousel(direction) {
   const totalImages = images.length;
   currentIndex += direction;
@@ -65,33 +95,6 @@ function botaoFiltro(categoria) {
   });
 }
 
-
-function buscarReceita() {
-  const query = document.getElementById('searchInput').value.toLowerCase();
-  const recipes = document.querySelectorAll('.recipe-field');
-  const searchInput = document.querySelector('search-bar').value;
-  localStorage.setItem('filtroBusca', searchInput);
-
-  recipes.forEach(recipe => {
-    // Obtém a categoria e o nome da receita
-    const recipeCategory = recipe.classList.contains('doce') ? 'doce' : 
-                           recipe.classList.contains('salgado') ? 'salgado' : 'saudavel';
-    const recipeName = recipe.querySelector('h2').textContent.toLowerCase();
-  
-    // Exibe todas as receitas se o campo de busca estiver vazio
-    if (!query) {
-      recipe.style.display = 'block';
-    } 
-    // Exibe a receita se a categoria ou o nome corresponder ao termo de busca
-    else if (recipeCategory.includes(query) || recipeName.includes(query)) {
-      recipe.style.display = 'block';
-    } 
-    // Oculta a receita caso não haja correspondência
-    else {
-      recipe.style.display = 'none';
-    }
-  });  
-}
 // Gerenciamento de modais
 function initializeModals() {
   const modals = document.querySelectorAll('.recipe-modal');
