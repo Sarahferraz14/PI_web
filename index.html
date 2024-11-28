@@ -3,68 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receitas</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Receitas Fáceis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Cabeçalho -->
     <header class="header">
-        <nav>
-            <ul class="nav-list">
-                <li><a href="index.html">Inicial</a></li>
-                <li><a href="receitas.html">Receitas</a></li>
-                <li><a href="dietas.html">Dietas</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1 class="logo">Receitas Fáceis</h1>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="receitas.html">Receitas</a></li>
+                    <li><a href="dietas.html">Dietas</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-    <div class="slider-container">
-        <button class="prev">&#10094;</button> <!-- Botão de anterior -->
-        <div class="slider">
-            <img src="https://s2-oglobo.glbimg.com/4JmfXcfq0Q5Bx5m6P2rnhUSMwwE=/0x0:600x400/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2023/7/L/80q3LFQRGK7lYKuWeZHg/disney.jpg" alt="" onclick="showLargeImage(1)">
-            <img src="https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/2/375/433/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/campaign/fl-res-summer-magic/WDW-139511-ARF-for-Summer-Ticket-Offer-640x360-1x1.jpg" alt="" class="active" onclick="showLargeImage(2)">
-            <img src="https://p2.trrsf.com/image/fget/cf/1200/1200/middle/images.terra.com/2023/11/07/ritalobo-reproducaoinstagramritalobo-s13cvq855944.png" alt="" onclick="showLargeImage(3)">
-            <img src="https://i.pinimg.com/736x/a8/56/af/a856af8d69bc511157632169ffc97f95.jpg" alt="" onclick="showLargeImage(4)">
-            <img src="https://st.depositphotos.com/1252248/1623/i/950/depositphotos_16235623-stock-illustration-funny-pig-lies-on-a.jpg" alt="" onclick="showLargeImage(5)">
-            <img src="https://st.depositphotos.com/1252248/1623/i/950/depositphotos_16235623-stock-illustration-funny-pig-lies-on-a.jpg" alt="" onclick="showLargeImage(6)">
-            <img src="https://s2-g1.glbimg.com/BpTq3PjgZi8nlS7l678EN2mh_PY=/0x0:1600x1200/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2024/p/L/F4nuV4TcKRjlQ6S6lnzw/whatsapp-image-2024-09-14-at-18.04.09.jpeg" alt="" onclick="showLargeImage(7)">
+
+    <!-- Destaque -->
+    <section class="highlight">
+        <div class="container">
+            <h2>Descubra receitas práticas e deliciosas</h2>
+            <p>Escolha a receita perfeita para seu dia a dia e surpreenda na cozinha!</p>
         </div>
-        <button class="next">&#10095;</button> <!-- Botão de próximo -->
+    </section>
+
+    <!-- Seção de Receitas -->
+    <section id="receitas" class="receitas">
+        <div class="container">
+            <h2>Receitas em Destaque</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Receita 1">
+                    <h3>Papilote de Frango</h3>
+                    <p>Frango no papilote com temperos especiais.</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Receita 2">
+                    <h3>Clafoutis de Abobrinha</h3>
+                    <p>Uma opção leve e deliciosa para o jantar.</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Receita 3">
+                    <h3>Espaguete com Molho</h3>
+                    <p>Espaguete artesanal com molho de tomate assado.</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Receita 4">
+                    <h3>Roseta de Peixe</h3>
+                    <p>Peixe fresco servido com um toque especial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="carrossel-container">
+        <h2>Recomendações de videos</h2>
+        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+        
+        <div class="carrossel">
+            <!-- Embeds de vídeos do YouTube -->
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/kJQP7kiw5Fk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        
+        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
     </div>
 
-    <section class="large-image-container">
-        <img id="largeImage" src="img1.jpg" alt="Imagem Grande">
-        <p id="imageDescription">Imagem 1</p>
-    </section>
-   
-    <!--parte do carrossel, TEM QUE ARRUMAR O CSS-->
-    <section class="carousel-container">
-        <button class="prev" onclick="prevSlide()">&#10094;</button>
-        <div class="carousel-slide">
-            <a href="receita1.html" class="carousel-item active">
-                <img src="imagem1.jpg" alt="">
-            </a>
-            <a href="receita2.html" class="carousel-item">
-                <img src="imagem2.jpg" alt="">
-            </a>
-            <a href="receita3.html" class="carousel-item">
-                <img src="imagem3.jpg" alt="">
-            </a>
-            <a href="receita4.html" class="carousel-item">
-                <img src="imagem4.jpg" alt="">
-            </a>
-            <a href="receita5.html" class="carousel-item">
-                <img src="imagem5.jpg" alt="">
-            </a>
-            <a href="receita6.html" class="carousel-item">
-                <img src="imagem6.jpg" alt="">
-            </a>
+    <script src="script.js"></script>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Receitas Fáceis. Todos os direitos reservados.</p>
         </div>
-        <button class="next" onclick="nextSlide()">&#10095;</button>
-    </section>
-    </main>
-    <script src="script.js"></script> 
+    </footer>
+
 </body>
 </html>
