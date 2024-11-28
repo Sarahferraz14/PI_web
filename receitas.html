@@ -19,15 +19,17 @@
     </ul>
   </header>
 
-  <div id="container">
-    <div class="input-group">
-      <input id="search" type="text" class="input-field" placeholder="Buscar receita...">
-      <div class="input-icon">
-        <span class="icon"></span>
-      </div>
-    </div>
-  </div>
-
+ eloise/pagina-inicial/arrumar
+   <!-- arrumar para filtar as buscas e colocar um lupa no canto direito para ficar bonito -->
+   <nav class="main-nav">
+    <form class="search-bar" onsubmit="filterSearch(event)">
+      <input type="text" id="searchInput" placeholder="Buscar receita...">
+      <button type="submit">
+        <span class="icon"><i class="fas fa-search"></i></span></span>
+      </button>
+    </form>
+  </nav>
+ main
 
   <section class="filter">
     <button onclick="botaoFiltro('todas')">Todas</button>

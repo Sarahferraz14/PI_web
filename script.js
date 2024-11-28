@@ -3,52 +3,29 @@ const imagesToShow = 4; // Número de imagens visíveis ao mesmo tempo
 const images = document.querySelectorAll(".carousel img");
 const carousel = document.querySelector(".carousel");
 
-const searchInput = document.getElementById('search');
-
-searchInput.addEventListener('input', (event) => {
-  const value = event.target.value
-
-  const itens = document.querySelectorAll('.recipe-field');
-  const noResults = document.getElementById('no_results');
-
-  let hasResults = false;
+eloise/pagina-inicial/arrumar
+function filtrarReceitas(categoria) {
+    // Seleciona todas as receitas
+    let receitas = document.querySelectorAll('.recipe-field');
   
-  itens.forEach(recipe => {
-    if(formaString(recipe.textContent).indexOf(value) !== -1) {
-      recipe.style.display = 'block';
-
-      hasResults = true;
-    } else {
-      recipe.style.display = 'none';
-    }
- })
-
- if (hasResults)  {
-  noResults.style.display = 'none';
- } else {
-  noResults.style.display = 'block';
- }
-});
-
-function formaString(value) {
-    return value.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-}
-function moveCarousel(direction) {
-  const totalImages = images.length;
-  currentIndex += direction;
-
-  // Controla para evitar passar dos limites
-  if (currentIndex < 0) {
-    currentIndex = totalImages - imagesToShow;
-  } else if (currentIndex > totalImages - imagesToShow) {
-    currentIndex = 0;
+    // Itera sobre todas as receitas
+    receitas.forEach(function(receita) {
+      // Mostra todas as receitas se o filtro for "todas"
+      if (categoria === 'todas') {
+        receita.style.display = 'block';
+      } else {
+        // Mostra as receitas da categoria correspondente e esconde as outras
+        if (receita.classList.contains(categoria)) {
+          receita.style.display = 'block';
+        } else {
+          receita.style.display = 'none';
+        }
+      }
+    });
   }
+  // Funções para abrir e fechar o modal
+function openRecipeModal(recipeId) {
 
-  const offset = -(currentIndex * 100) / imagesToShow;
-  carousel.style.transform = `translateX(${offset}%)`;
-}
-
-function openRecipeModal(recipeId, isCarousel = false) {
   const modal = document.getElementById(recipeId);
     modal.showModal();
     modal.addEventListener('click', (e) => {
@@ -165,3 +142,22 @@ function showNotification(message, type = 'info') {
       notification.remove();
   }, 3000);
 }
+
+const videos = document.querySelectorAll('.carrossel .video'); // Todos os vídeos no carrossel
+
+// Função para mover o carrossel
+function moveCarousel(direction) {
+    // Calcula o novo índice
+    currentIndex += direction;
+    
+    // Impede que o carrossel ultrapasse os limites
+    if (currentIndex < 0) {
+        currentIndex = videos.length - 1; // Vai para o último vídeo
+    } else if (currentIndex >= videos.length) {
+        currentIndex = 0; // Volta para o primeiro vídeo
+    }
+    
+    // Altera a posição do carrossel
+    document.querySelector('.carrossel').style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
