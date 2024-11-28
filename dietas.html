@@ -8,14 +8,113 @@
 </head>
 <body>
     <header class="header">
+        <a href="index.html" class="logo"></a>
         <ul class="nav-list">
-            <li><a href="index.html">Inicial</a></li>
-            <li><a href="receitas.html">Receitas</a></li>
-            <li><a href="dietas.html">Dietas</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="index.html">Inicial</a></li>
+          <li><a href="receitas.html">Receitas</a></li>
+          <li><a href="dietas.html">Dietas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
         </ul>
-    </header>
+      </header>
+    <main class="recipes-container">
+     
+        <div class="recipe-field doce">
+            <img src="Imagens/trigo.webp" alt="Gluten">
+            <h2>Glúten</h2>
+            <p>(G)</p>
+            <button onclick="openRecipeModal('gluten')">Saiba mais</button>
+        </div>
+    
+        <div class="recipe-field salgada">
+          <img src="Imagens/acucar.avif" alt="Açucar">
+          <h2>Alto em Açúcar</h2>
+          <p>(A)</p>
+          <button onclick="openRecipeModal('acucar')">Saiba mais</button>
+        </div>
+    
+        
+        <div class="recipe-field doce">
+          <img src="Imagens/.png" alt="Vegano">
+          <h2>Vegano</h2>
+          <p>(V)</p>
+          <button onclick="openRecipeModal('vegano')">Saiba mais</button>
+        </div>
+    
+        <div class="recipe-field doce">
+          <img src="Imagens/leite.png" alt="Lactose">
+          <h2>Lactose</h2>
+          <p>(L)</p>
+          <button onclick="openRecipeModal('lactose')">Saiba mais</button>
+        </div>
+    </main>
+    </br>
+        <p> Algumas pessoas podem possuir alguma restrição ou preferências para comidas. Se você se encaixa em um destes perfis, veja qual é o simbolo que representa tal restrição e verifique a presença do mesmo em todas as receitas para sua segurança.</p>
+    vegano
+    <dialog id="gluten" class="recipe-modal">
+        <div class="modal-content">
+            <button class="close-x" onclick="closeRecipeModal('gluten')">&times;</button>
+            <h2>Doença Celíaca</h2>
+      
+            <div class="recipe-details">
+            <p>     A doença celíaca é uma condição que exige a exclusão total do glúten da dieta. Pessoas com essa condição não podem consumir alimentos que contenham trigo, cevada ou centeio, pois o glúten causa reações negativas no organismo.</p>  
+            <p>O tratamento é simples: seguir uma alimentação sem glúten, garantindo saúde e bem-estar. Adaptar receitas para quem tem doença celíaca é uma forma de incluir todos na mesa com segurança e sabor!</p>
+            <h3> Alguns alimentos com glúten:</h3>
+            <p>pão, massas, bolos, biscoitos, cerveja e até alguns molhos industrializados.</p>
+            <h3> Importante: </h3>
+            <p> Para saber quais receitas contém glúten, procupe a marcação "(G)"</p>
+            
+        </div>
+      </dialog>
+      
+      <dialog id="acucar" class="recipe-modal">
+        <div class="modal-content">
+            <button class="close-x" onclick="closeRecipeModal('acucar')">&times;</button>
+            <h2>Alta adição de açúcar</h2>
+      
+            <div class="recipe-details">
+            <p>     O consumo excessivo de açúcar pode trazer riscos à saúde, como aumento de peso, diabetes e cáries. Muitas receitas tradicionais podem ser ajustadas para reduzir o açúcar sem perder o sabor.</p>  
+            <p>Substituir o açúcar por opções naturais, como mel, tâmaras ou adoçantes, é uma forma de criar receitas mais saudáveis e equilibradas!</p>
+            <h3> Alguns alimentos com alta adição de açúcar:</h3>
+            <p>refrigerantes, bolos, doces industrializados, sorvetes e cereais açucarados.</p>
+            <h3> Importante: </h3>
+            <p> Para saber quais receitas contém alta adição de açúcar, procupe a marcação "(A)"</p>
+            
+        </div>
+      </dialog>
 
+      <dialog id="vegano" class="recipe-modal">
+        <div class="modal-content">
+            <button class="close-x" onclick="closeRecipeModal('vegano')">&times;</button>
+            <h2>Veganismo</h2>
+      
+            <div class="recipe-details">
+            <p>     O veganismo é um estilo de vida que exclui qualquer produto de origem animal. Isso inclui carne, leite, ovos, mel e seus derivados.</p>  
+            <p>Adaptar receitas para o veganismo promove inclusão, sustentabilidade e respeito aos animais, além de proporcionar pratos criativos e saborosos!</p>
+            <h3> Alguns alimentos veganos:</h3>
+            <p>frutas, verduras, legumes, grãos, nozes e alimentos plant-based.</p>
+            <h3> Importante: </h3>
+            <p> Para saber quais receitas são veganas, procupe a marcação "(V)"</p>
+            
+        </div>
+      </dialog>
+
+      <dialog id="lactose" class="recipe-modal">
+        <div class="modal-content">
+            <button class="close-x" onclick="closeRecipeModal('lactose')">&times;</button>
+            <h2>Intolerância à lactose</h2>
+      
+            <div class="recipe-details">
+            <p>     A intolerância à lactose ocorre quando o corpo não consegue digerir bem o açúcar presente no leite e em seus derivados. Isso pode causar desconforto, como inchaço e dores abdominais.</p>  
+            <p>Uma alimentação sem lactose inclui versões alternativas desses alimentos, como leites vegetais e queijos sem lactose, permitindo pratos deliciosos e acessíveis para todos!</p>
+            <h3> Alguns alimentos com lactose:</h3>
+            <p>leite, queijos, iogurtes, manteiga e sorvetes</p>
+            <h3> Importante: </h3>
+            <p> Para saber quais receitas contém lactose, procupe a marcação "(L)"</p>
+            
+        </div>
+      </dialog>
+
+      <script src="script.js"></script>
     <!--vegetariana, vegana, light, fitness, diet, sem glúten, sem lactose-->
 </body>
 </html>
