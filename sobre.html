@@ -4,52 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receitas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header class="header">
-    <a href="index.html" class="logo"></a>
-    <ul class="nav-list">
-      <li><a href="index.html">Inicial</a></li>
-      <li><a href="receitas.html">Receitas</a></li>
-      <li><a href="dietas.html">Dietas</a></li>
-      <li><a href="sobre.html">Sobre</a></li>
-    </ul>
-  </header>
+   <!-- Cabeçalho -->
+<header class="header">
+    <div class="container">
+        <h1 class="logo">Receitas Fáceis</h1>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="receitas.html">Receitas</a></li>
+                <li><a href="dietas.html">Dietas</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
+<div class="container">
     <h2> Sobre nós: </h2>
-    <p> Somos um grupo de engenheiros da computação da Pontifícia Universidade Católica de Campinas criando nosso próprio site de receitas!!</p>
+    <p> Somos um grupo de estudantes de engenheiros da computação da Pontifícia Universidade Católica de Campinas criando nosso próprio site de receitas!!</p>
     <br/>
-    <h2> Quem somos: </h2>
-    <p> Nosso grupo é composto por Eloise dos Santos Ruiz, Felipe Martins Leivas, Gustavo Bordin Correa e Sarah Mendes Ferraz</p>
+</div>
+    <section id="qm_somos" class="qm_somos">
+        <div class="container">
+            <h2>Quem somos:</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/92/a1/81/92a1818e00c091368dcb680f76e2fe5e.jpg" alt="Elo">
+                    <h3>Eloise dos Santos Ruiz</h3>
+                    <p>Frango no papilote com temperos especiais.</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/93/36/e4/9336e45bd07ebeda9e123e70e34813d3.jpg" alt="Leivas">
+                    <h3>Felipe Martins Leivas</h3>
+                    <p>Uma opção leve e deliciosa para o jantar.</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/4c/e6/ec/4ce6ec12c35cbaafa4d728bb7d3275ae.jpg" alt="Bordin">
+                    <h3>Gustavo Bordin Correa</h3>
+                    <p>Espaguete artesanal com molho de tomate assado.</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/22/7a/19/227a1919225d37447453db9af7ad6998.jpg" alt="Sarah">
+                    <h3>Sarah Mendes Ferraz</h3>
+                    <p>Peixe fresco servido com um toque especial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <br/>
+
+    <div class="container">
     <h2> Sobre o projeto: </h2>
-    <p> Nosso projeto, proposto pelo professor José Matias Lemes Filho, consiste em montar um site com o tema de nossa preferência utilizando as linguagens HTML, CSS, JavaScript, entre outras.</p>
-    <p> Esperamos que apreciem nosso site de receitas, para qualquer contato ou sugestões, sinta-se à vontade para preencher o formulário abaixo.</p>
+    <p> Nosso projeto, proposto pelo professor José Matias Lemes Filho, consiste em montar um site com o tema de nossa preferência utilizando as linguagens HTML, CSS, JavaScript.</p>
+    <p>Por podermos escolher o tema decidomos juntar as duas coisas, que gostamos muito hábilidade de codificar e gosto por cozinhar, criando aasim o "..."</p>
+    <p>Neste você pode procurar por receitas para o dia a dia, momentos especiais ou conhecimentos sobre outras coisas relacionadas a cozinha e alimentos.</p>
+    <p> Esperamos que apreciem nosso site de receitas.</p>
     <br/>
-    <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="1e6eebe2-63aa-4b3d-898a-6465bbb7bcb8">
-    
-        <h2>Formulário para contato</h2>
-    
-        <div class ='caixa'>
-          <p>Seu Nome:</p>
-          <input class=dentro type="text" name="name" placeholder="Digite seu nome" required>
-        
-          <p>Seu e-mail:</p>
-          <input class=dentro type="email" name="email" placeholder="Digite seu e-mail" required>
-        
-          <p>Sua mensagem:</p>
-          <textarea class=dentro name="message" placeholder="Digite sua mensagem"cols="18" rows="2"   required></textarea>
-        </div>
-    
-        <div class ='botao'>
-          <button class=btn onclick="submitAnswers()">Enviar</button> 
-        </div>
-      
-      </form>
-    
+</div>
       <footer id = "footer">
         <p>Todos os direitos reservádos a 
         Eloise Ruiz, Felipe Leivas, Gustavo Bordin & Sarah Ferraz</p>
