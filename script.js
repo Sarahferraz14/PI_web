@@ -3,7 +3,6 @@ const imagesToShow = 4; // Número de imagens visíveis ao mesmo tempo
 const images = document.querySelectorAll(".carousel img");
 const carousel = document.querySelector(".carousel");
 
-eloise/pagina-inicial/arrumar
 function filtrarReceitas(categoria) {
     // Seleciona todas as receitas
     let receitas = document.querySelectorAll('.recipe-field');
