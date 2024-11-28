@@ -19,6 +19,7 @@
     </ul>
   </header>
 
+ eloise/pagina-inicial/arrumar
    <!-- arrumar para filtar as buscas e colocar um lupa no canto direito para ficar bonito -->
    <nav class="main-nav">
     <form class="search-bar" onsubmit="filterSearch(event)">
@@ -28,12 +29,13 @@
       </button>
     </form>
   </nav>
+ main
 
   <section class="filter">
-    <button onclick="filtrarReceitas('todas')">Todas</button>
-    <button onclick="filtrarReceitas('doce')">Doces</button>
-    <button onclick="filtrarReceitas('salgada')">Salgadas</button>
-    <button onclick="filtrarReceitas('saudavel')">Saudável</button>
+    <button onclick="botaoFiltro('todas')">Todas</button>
+    <button onclick="botaoFiltro('doce')">Doces</button>
+    <button onclick="botaoFiltro('salgada')">Salgadas</button>
+    <button onclick="botaoFiltro('saudavel')">Saudável</button>
   </section>
 
   <main class="recipes-container">
@@ -85,14 +87,14 @@
       <img src="https://moinhoglobo.com.br/wp-content/uploads/2018/09/24-panqueca.jpg" alt="Massa de Panqueca">
       <h2>Massa de Panqueca </h2>
       <p>Massa de Panqueca</p>
-      <button onclick="openRecipeModal('recipe7')">Ver receita</button>
+      <button onclick="openRecipeModal('recipe7')">Ver Receita</button>
     </div>
 
-    <div class="recipe-field salgada">
-      <img src="https://th.bing.com/th/id/R.63080b9e272727d98774043933b62d4e?rik=GrWXEovxt22pug&pid=ImgRaw&r=0" alt="Massa de pizza">
-      <h2>Massa de pizza</h2>
-      <p>Massa de pizza</p>
-      <button onclick="openRecipeModal('recipe12')">Ver receita</button>
+    <div class="recipe-field saudavel">
+      <img src="imagens/torta-frango.jpg" alt="Torta frango">
+      <h2>Tortinha de colher</h2>
+      <p>Tortinha de colher</p>
+      <button onclick="openRecipeModal('recipe8')">Ver receita</button>
     </div>
 
     <div class="recipe-field doce">
@@ -100,6 +102,34 @@
       <h2>Brigadeirão</h2>
       <p>Brigadeirão</p>
       <button onclick="openRecipeModal('recipe9')">Ver receita</button>
+    </div>
+
+    <div class="recipe-field doce">
+      <img src="imagens/smoothie-morango.png" alt="Smoothie de Morango e Banana">
+      <h2>Smoothie de Morango</h2>
+      <p>Smoothie de Iogurte com <br> Morango e Banana</p>
+      <button onclick="openRecipeModal('recipe8')">Ver receita</button>
+    </div>
+
+    <div class="recipe-field salgada">
+      <img src="imagens/paodequeijo.jpg" alt="Pão de Queijo">
+      <h2>Pão de Queijo</h2>
+      <p>Pão de Queijo</p>
+      <button onclick="openRecipeModal('recipe10')">Ver receita</button>
+    </div>
+
+    <div class="recipe-field saudavel">
+      <img src="imagens/biscoitos-aveia.webp" alt="Biscoitos de Aveia e Mel">
+      <h2>Biscoitos de Aveia e Mel</h2>
+      <p>Biscoitos de Aveia e Mel</p>
+      <button onclick="openRecipeModal('recipe11')">Ver receita</button>
+    </div>
+
+    <div class="recipe-field salgada">
+      <img src="https://th.bing.com/th/id/R.63080b9e272727d98774043933b62d4e?rik=GrWXEovxt22pug&pid=ImgRaw&r=0" alt="Massa de pizza">
+      <h2>Massa de pizza</h2>
+      <p>Massa de pizza</p>
+      <button onclick="openRecipeModal('recipe12')">Ver receita</button>
     </div>
 
     <div class="recipe-field doce">
@@ -115,6 +145,14 @@
       <p>Poutine</p>
       <button onclick="openRecipeModal('recipe14')">Ver receita</button>
     </div>
+
+    <div class="recipe-field doce">
+      <img src="imagens/Cheesecake-de-Romeu-e-Julieta.webp" alt="Cheesecake">
+      <h2>Cheesecake Romeu e Julieta</h2>
+      <p>Cheesecake Romeu e Julieta</p>
+      <button onclick="openRecipeModal('recipe15')">Ver Receita</button>
+    </div>
+    </main>
 
 <dialog id="recipe1" class="recipe-modal">
   <div class="modal-content">
@@ -418,11 +456,170 @@
       </div>
   </div>
 </dialog>
-  </main>
 
-  <dialog id="recipe11" class="recipe-modal">
+<dialog id="recipe8" class="recipe-modal">
+  <div class="modal-content">
+      <button class="close-x" onclick="closeRecipeModal('recipe8')">&times;</button>
+      <h2>Tortinha de colher</h2>
+
+      <div class="recipe-info">
+        <span><i class="fas fa-clock"></i> Preparo: 40 minutos</span>
+        <span><i class="fas fa-signal"></i> Dificuldade: Médio</span>
+        <span><i class="fas fa-dollar-sign"></i> Custo: Médio</span>
+      </div>
+
+      <div class="recipe-details">
+          <h3>Ingredientes:</h3>
+          <h4>Recheio:</h4>
+          <ul>
+              <li>500ml de leite</li>
+              <li>250ml de óleo de soja</li>
+              <li>3 xícaras de farinha de trigo</li>
+              <li>1 colher de café de sal</li>
+              <li>4 ovos</li>
+              <li>2 colheres de café de fermento</li>
+          </ul>
+          <h4>Massa:</h4>
+          <ul>
+            <li>1 pitada de orégano</li>
+            <li>1 peito de frango cozido e desfiado</li>
+            <li>1/2 cebola</li>
+            <li>1 lata de milho</li>
+            <li>1 tomate picado sem semente</li>
+            <li>sal</li>
+            <li>azeite</li>
+          </ul>
+          <h4>Outros:</h4>
+          <ul>
+            <li>25g de queijo parmesão ralado</li>
+          </ul>
+          
+          <h3>Modo de Preparo:</h3>
+          <h4>Recheio:</h4>
+          <ol>
+              <li>Refogue o frango desfiado com um fio de azeite, cebola em cubinhos, tomate e 1 pitada de sal.</li>
+              <li>Acrescente o milho e a pitada de orégano.</li>
+          </ol>
+          <h4>Montagem:</h4>
+          <ol>
+            <li>Bata os demais ingredientes da massa em um liquidificador ou no garfo e acrescente por ultimo o fermento.</li>
+            <li>Despeje metade da massa em forminhas de alumínio individual ou assadeira tamanho grande de inox ou alumínio, untada com manteiga.</li>
+            <li>Acrescente o recheio por cima e cubra com o restante da massa.</li>
+            <li>Povilhe queijo parmesão e coloque para assar em forno alto (220°C), preaquecido, por 40 minutos.</li>
+          </ol>
+      </div>
+  </div>
+</dialog>
+
+<dialog id="recipe9" class="recipe-modal">
+  <div class="modal-content">
+      <button class="close-x" onclick="closeRecipeModal('recipe9')">&times;</button>
+      <h2>Brigadeirão</h2>
+
+      <div class="recipe-info">
+        <span><i class="fas fa-clock"></i> Preparo: 1 hora e 15 minutos</span>
+        <span><i class="fas fa-utensils"></i> Porções: 8 porções</span>
+        <span><i class="fas fa-signal"></i> Dificuldade: Fácil</span>
+        <span><i class="fas fa-dollar-sign"></i> Custo: Baixo</span>
+      </div>
+
+      <div class="recipe-details">
+          <h3>Ingredientes:</h3>
+          <ul>
+              <li>2 latas de leite condensado</li>
+              <li>1 colher de manteiga</li>
+              <li>4 ovos</li>
+              <li>1 lata de leite de vaca (use a lata de leite condensado como medida)</li>
+              <li>200 g de chocolate em pó</li>
+              <li>açúcar suficiente para polvilhar a forma</li>
+          </ul>
+         
+          <h3>Modo de Preparo:</h3>
+          <ol>
+              <li>Bata o leite condensado, o leite de vaca, a manteiga, o chocolate em pó e os ovos no liquidificador</li>
+              <li>Unte uma forma com buraco no meio e polvilhe com açúcar.</li>
+              <li>Coloque a mistura liquidificada na forma e leve ao forno para assar em banho-maria por mais ou menos 1 hora, a 150°C.</li>
+          </ol>
+      </div>
+  </div>
+</dialog>
+
+<dialog id="recipe10" class="recipe-modal">
+  <div class="modal-content">
+      <button class="close-x" onclick="closeRecipeModal('recipe10')">&times;</button>
+      <h2>Pão de Queijo</h2>
+
+      <div class="recipe-info">
+        <span><i class="fas fa-clock"></i> Preparo: 50 minutos</span>
+        <span><i class="fas fa-utensils"></i> Porções: ?</span>
+        <span><i class="fas fa-signal"></i> Dificuldade: Fácil</span>
+        <span><i class="fas fa-dollar-sign"></i> Custo: Médio</span>
+      </div>
+
+      <div class="recipe-details">
+          <h3>Ingredientes:</h3>
+          <h4>Massa: </h4>
+          <ul>
+              <li>250g de povilho doce</li>
+              <li>1/4 xícara de chá de óleo</li>
+              <li>1/2 xícara de chá de leite</li>
+              <li>1/2 colher de sopa de sal</li>
+              <li>1 ovo</li>
+              <li>1 xícara de queijo meia cura, mussarela ou parmesão ralado</li>
+              <li>sal a gosto</li>
+          </ul>
+          <h3>Modo de Preparo:</h3>
+          <h4>Massa:</h4>
+          <ol>
+              <li>Em uma panela, ferva o leite, o óleo e o sal.</li>
+              <li>Adicione o povilho, misture bem e comece a sovar a massa com o fogo desligado.</li>
+              <li>Junte o ovo e 1/2 xígara de queijo ralado.</li>
+              <li>Unte as mãos e enrole bolinhas de 2 cm de diâmetro.</li>
+              <li>Disponha as bolinhas em uma assadeira untada com óleo, deixando um espaço entre elas.</li>
+              <li>Asse em forno médio (180°C), preaquecido, por cerca de 40 minutos.</li>
+          </ol>
+      </div>
+  </div>
+</dialog>
+
+<dialog id="recipe11" class="recipe-modal">
+  <div class="modal-content">
+      <button class="close-x" onclick="closeRecipeModal('recipe11')">&times;</button>
+      <h2>Biscoitos de Aveia e Mel</h2>
+
+      <div class="recipe-info">
+        <span><i class="fas fa-clock"></i> Preparo: 25 minutos</span>
+        <span><i class="fas fa-utensils"></i> Porções: ?</span>
+        <span><i class="fas fa-signal"></i> Dificuldade: Fácil</span>
+        <span><i class="fas fa-dollar-sign"></i> Custo: Médio</span>
+      </div>
+
+      <div class="recipe-details">
+          <h3>Ingredientes:</h3>
+          <ul>
+              <li>1 xícara de aveia</li>
+              <li>1 xícara de farinha de trigo</li>
+              <li>1/2 xícara de açúcar demerara</li>
+              <li>1 ovo</li>
+              <li>1 colher de sopa de manteiga derretida, ou óleo de coco</li>
+              <li>2 colheres de sopa de mel</li>
+              <li>1 colher de chá de fermento em pó</li>
+          </ul>
+          <h3>Modo de Preparo:</h3>
+          <ol>
+              <li>Misture os ingredientes secos.</li>
+              <li>Adicione os ingredientes restantes e misturar muito bem.</li>
+              <li>Moldar em formato de bolachinhas e colocar em uma forma untada.</li>
+              <li>Deixá-las bem separadas (crescem muito).</li>
+              <li>Deixar de 15 a 20 minutos no forno.</li>
+          </ol>
+      </div>
+  </div>
+</dialog>
+
+  <dialog id="recipe12" class="recipe-modal">
     <div class="modal-content">
-        <button class="close-x" onclick="closeRecipeModal('recipe11')">&times;</button>
+        <button class="close-x" onclick="closeRecipeModal('recipe12')">&times;</button>
         <h2>Massa de pizza</h2>
   
         <div class="recipe-info">
@@ -456,38 +653,7 @@
     </div>
   </dialog>
 
-  <dialog id="recipe9" class="recipe-modal">
-    <div class="modal-content">
-        <button class="close-x" onclick="closeRecipeModal('recipe9')">&times;</button>
-        <h2>Brigadeirão</h2>
   
-        <div class="recipe-info">
-          <span><i class="fas fa-clock"></i> Preparo: 1 hora e 15 minutos</span>
-          <span><i class="fas fa-utensils"></i> Porções: 8 porções</span>
-          <span><i class="fas fa-signal"></i> Dificuldade: Fácil</span>
-          <span><i class="fas fa-dollar-sign"></i> Custo: Baixo</span>
-        </div>
-  
-        <div class="recipe-details">
-            <h3>Ingredientes:</h3>
-            <ul>
-                <li>2 latas de leite condensado</li>
-                <li>1 colher de manteiga</li>
-                <li>4 ovos</li>
-                <li>1 lata de leite de vaca (use a lata de leite condensado como medida)</li>
-                <li>200 g de chocolate em pó</li>
-                <li>açúcar suficiente para polvilhar a forma</li>
-            </ul>
-           
-            <h3>Modo de Preparo:</h3>
-            <ol>
-                <li>Bata o leite condensado, o leite de vaca, a manteiga, o chocolate em pó e os ovos no liquidificador</li>
-                <li>Unte uma forma com buraco no meio e polvilhe com açúcar.</li>
-                <li>Coloque a mistura liquidificada na forma e leve ao forno para assar em banho-maria por mais ou menos 1 hora, a 150°C.</li>
-            </ol>
-        </div>
-    </div>
-  </dialog>
 
   <dialog id="recipe13" class="recipe-modal">
     <div class="modal-content">
@@ -589,6 +755,70 @@
         </div>
     </div>
   </dialog>
+
+  <dialog id="recipe15" class="recipe-modal">
+    <div class="modal-content">
+        <button class="close-x" onclick="closeRecipeModal('recipe15')">&times;</button>
+        <h2>Cheesecake Romeu e Julieta</h2>
+  
+        <div class="recipe-info">
+          <span><i class="fas fa-clock"></i> Preparo: 30 minutos</span>
+          <span><i class="fas fa-signal"></i> Dificuldade: Médio</span>
+          <span><i class="fas fa-dollar-sign"></i> Custo: Médio</span>
+        </div>
+  
+        <div class="recipe-details">
+            <h3>Ingredientes:</h3>
+            <h4>Crosta: </h4>
+            <ul>
+                <li>200g de biscoito maisena</li>
+                <li>100g de margarina para bolo</li>
+            </ul>
+            <h4>Recheio: </h4>
+            <ul>
+                <li>1 xícara de chá de leite</li>
+                <li>3 colheres de sopa de manteiga sem sal</li>
+                <li>300g de ricota</li>
+                <li>1 lata de leite condensado</li>
+                <li>4 ovos</li>
+            </ul>
+            <h4>Cobertura: </h4>
+            <ul>
+                <li>300g de goiabada</li>
+                <li>1/2 xícara de água</li>
+            </ul>
+            
+            <h3>Modo de Preparo:</h3>
+            <h4>Massa:</h4>
+            <ol>
+                <li>Triture o biscoito de maisena em um liquidificador ou processador.</li>
+                <li>Junte a margarina e bata mais um pouco.</li>
+                <li>Despeje a massa em uma forma de fundo removível (22 cm de diâmetro).</li>
+                <li>Com as mãos, espalhe os biscoitos triturados no fundo e nas laterais da forma, cobrindo toda área de maneira uniforme.</li>
+                <li>Leve ao forno médio (180° C), preaquecido, por aproximadamente 10 minutos.</li>
+            </ol>
+            <h4>Recheio:</h4>
+            <ol>
+              <li>Ferva o leite com a manteiga.</li>
+              <li>Em um liquidificador, bata a ricota e vá adicionando o leite fervente para desfazê-la completamente.</li>
+              <li>Acrescente o leite condensado e os ovos, e volte a bater.</li>
+              <li>Despeje sobre a Massa.</li>
+              <li>Leve ao forno à temperatura de 180°C por cerca de 30 minutos</li>
+            </ol>
+            <h4>Cobertura:</h4>
+            <ol>
+              <li>Derreta a goiabada com água e cubra o cheesecake.</li>
+              <li>Sirva frio.</li>
+            </ol>
+        </div>
+    </div>
+  </dialog>
+
+  <dialog id="no_results" class="no_results"> 
+  <div class="no_results">
+  <p>Nenhum resultado encontrado para a busca.</p>
+  </div>
+</dialog>
 
   <script src="script.js"></script>
 </body>
