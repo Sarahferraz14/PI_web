@@ -36,7 +36,12 @@
     <!-- Seção de Receitas -->
     <section id="receitas" class="receitas">
         <div class="container">
-            <h2>Receitas em Destaque</h2>
+            <div class="linha-com-texto">
+                <span></span>
+                <h2>Receitas em destaque</h2>
+                <span></span>
+            </div>
+            
             <div class="grid">
                 <div class="card">
                     <img src="https://via.placeholder.com/300x200" alt="Receita 1">
@@ -62,26 +67,55 @@
         </div>
     </section>
 
-
-    <div class="carrossel-container">
-        <h2>Recomendações de videos</h2>
-        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
-        
-        <div class="carrossel">
-            <!-- Embeds de vídeos do YouTube -->
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="carrossel-container">
+            <div class="linha-com-texto">
+                <span></span>
+                <h2>Recomendações de videos</h2>
+                <span></span>
             </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>Videos de receitas</p>
+            
+            <button class="prev">&#10094;</button>
+            
+            <div class="carrossel">
+                <!-- Embeds de vídeos do YouTube -->
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/i0q6uD-UPec?si=rHtR3hAFVYlHI29O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/2P4DtEFpPQI?si=3fwIzHxPRseCKJx5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FuKIX5Aml4Y?si=uB9_0XjNTRK-tuuR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/T1-lzcxXnWM?si=3vB5rIiHQJkrCrKa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/s-xwCbaHmg4?si=PmQVmUCIqvAPKkiT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/oB8_q-sX4RY?si=bLl7c9owOOiUbIc-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/L_jWHffIx5E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/L_jWHffIx5E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/L_jWHffIx5E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/kJQP7kiw5Fk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <button class="next">&#10095;</button>
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
             </div>
         </div>
+       
         
-        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
-    </div>
 
     <script src="script.js"></script>
     <!-- Rodapé -->

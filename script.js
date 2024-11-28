@@ -46,61 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeCarousels();
 });
 
-// Inicialização do slider
-function initializeCarousels() {
-  const carousels = document.querySelectorAll('.carousel-container');
-  
-  carousels.forEach(carousel => {
-      const slides = carousel.querySelector('.carousel-slide');
-      const items = carousel.querySelectorAll('.carousel-item');
-      const prevBtn = carousel.querySelector('.prev');
-      const nextBtn = carousel.querySelector('.next');
-
-      let currentIndex = 0;
-      const totalItems = items.length;
-
-      function updateCarousel() {
-          const itemWidth = items[0].offsetWidth;
-          const offset = -currentIndex * itemWidth;
-          slides.style.transform = `translateX(${offset}px)`;
-
-          // Atualiza classes ativas
-          items.forEach((item, index) => {
-              item.classList.toggle('active', index === currentIndex);
-          });
-      }
-
-      function nextSlide() {
-          currentIndex = (currentIndex + 1) % totalItems;
-          updateCarousel();
-      }
-
-      function prevSlide() {
-          currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-          updateCarousel();
-      }
-
-      // Event listeners para botões
-      nextBtn.addEventListener('click', nextSlide);
-      prevBtn.addEventListener('click', prevSlide);
-
-      // Autoplay
-      let interval = setInterval(nextSlide, 5000);
-
-      // Pausa o autoplay quando o mouse está sobre o carrossel
-      carousel.addEventListener('mouseenter', () => clearInterval(interval));
-      carousel.addEventListener('mouseleave', () => {
-          interval = setInterval(nextSlide, 5000);
-      });
-
-      // Inicializa o carrossel
-      updateCarousel();
-
-      // Ajusta o carrossel quando a janela é redimensionada
-      window.addEventListener('resize', updateCarousel);
-  });
-}
-
 // Função de utilidade para debounce
 function debounce(func, wait = 20) {
   let timeout;
@@ -277,21 +222,30 @@ function showNotification(message, type = 'info') {
   }, 3000);
 }
 
-const videos = document.querySelectorAll('.carrossel .video'); // Todos os vídeos no carrossel
+document.addEventListener("DOMContentLoaded", () => {
+  let currentIndex = 0; // Índice inicial do carrossel
+  const carrossel = document.querySelector(".carrossel");
+  const videos = document.querySelectorAll(".carrossel .video");
+  const videosPerView = 3; // Quantidade de vídeos visíveis por vez
+  const totalSlides = Math.ceil(videos.length / videosPerView);
 
-// Função para mover o carrossel
-function moveCarousel(direction) {
-    // Calcula o novo índice
-    currentIndex += direction;
-    
-    // Impede que o carrossel ultrapasse os limites
-    if (currentIndex < 0) {
-        currentIndex = videos.length - 1; // Vai para o último vídeo
-    } else if (currentIndex >= videos.length) {
-        currentIndex = 0; // Volta para o primeiro vídeo
-    }
-    
-    // Altera a posição do carrossel
-    document.querySelector('.carrossel').style.transform = `translateX(-${currentIndex * 100}%)`;
-}
+  function moveCarousel(direction) {
+      currentIndex += direction;
+
+      // Impedir que o índice ultrapasse os limites
+      if (currentIndex < 0) {
+          currentIndex = totalSlides - 1;
+      } else if (currentIndex >= totalSlides) {
+          currentIndex = 0;
+      }
+
+      // Calcula o deslocamento do carrossel
+      const offset = currentIndex * -100;
+      carrossel.style.transform = `translateX(${offset}%)`;
+  }
+
+  // Eventos dos botões
+  document.querySelector(".prev").addEventListener("click", () => moveCarousel(-1));
+  document.querySelector(".next").addEventListener("click", () => moveCarousel(1));
+});
 
