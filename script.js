@@ -222,30 +222,62 @@ function showNotification(message, type = 'info') {
   }, 3000);
 }
 
+
+// Função para detectar elementos visíveis na tela
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight && rect.bottom >= 0;
+}
+
+// Detecta e adiciona animações
+function handleScroll() {
+  const section = document.querySelector(".scroll-effect-section .content");
+  if (isElementInViewport(section)) {
+      section.classList.add("visible");
+  }
+}
+
+// Escuta o evento de rolagem
+document.addEventListener("scroll", handleScroll);
+window.addEventListener('scroll', function() {
+  const body = document.body;
+  if (window.scrollY > 50) { // Defina o limite para a rolagem
+      body.classList.add('scrolled');
+  } else {
+      body.classList.remove('scrolled');
+  }
+});
+document.addEventListener("scroll", () => {
+  const image = document.getElementById("hero-image");
+  const section = document.getElementById("hero-section");
+
+  // Posição da seção em relação ao scroll
+  const sectionTop = section.getBoundingClientRect().top;
+  const sectionHeight = section.offsetHeight;
+
+  // Calcula a opacidade com base no scroll
+  const opacity = Math.max(0, 1 - sectionTop / sectionHeight);
+
+  // Aplica os estilos de opacidade e transformação
+  image.style.opacity = opacity;
+  image.style.transform = `translateY(${-(1 - opacity) * 50}px)`; // Move a imagem para cima
+});
+
 document.addEventListener("DOMContentLoaded", () => {
-  let currentIndex = 0; // Índice inicial do carrossel
-  const carrossel = document.querySelector(".carrossel");
-  const videos = document.querySelectorAll(".carrossel .video");
-  const videosPerView = 3; // Quantidade de vídeos visíveis por vez
-  const totalSlides = Math.ceil(videos.length / videosPerView);
+  const tips = document.querySelectorAll('.tip');
+  let currentTipIndex = 0;
 
-  function moveCarousel(direction) {
-      currentIndex += direction;
-
-      // Impedir que o índice ultrapasse os limites
-      if (currentIndex < 0) {
-          currentIndex = totalSlides - 1;
-      } else if (currentIndex >= totalSlides) {
-          currentIndex = 0;
-      }
-
-      // Calcula o deslocamento do carrossel
-      const offset = currentIndex * -100;
-      carrossel.style.transform = `translateX(${offset}%)`;
+  function showNextTip() {
+      // Remove classe ativa da dica atual
+      tips[currentTipIndex].classList.remove('active');
+      currentTipIndex = (currentTipIndex + 1) % tips.length; // Avança para a próxima dica
+      // Adiciona classe ativa à nova dica
+      tips[currentTipIndex].classList.add('active');
   }
 
-  // Eventos dos botões
-  document.querySelector(".prev").addEventListener("click", () => moveCarousel(-1));
-  document.querySelector(".next").addEventListener("click", () => moveCarousel(1));
+  // Inicializa o efeito mostrando a primeira dica
+  tips[currentTipIndex].classList.add('active');
+  // Alterna a cada 5 segundos
+  setInterval(showNextTip, 5000);
 });
 
