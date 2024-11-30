@@ -1,7 +1,7 @@
-let currentIndex = 0; 
-const images = document.querySelectorAll('.slider img'); 
-const totalImages = images.length;
-let interval;
+let currentIndex = 0;
+const imagesToShow = 4; // Número de imagens visíveis ao mesmo tempo
+const images = document.querySelectorAll(".carousel img");
+const carousel = document.querySelector(".carousel");
 
 function filtrarReceitas(categoria) {
     // Seleciona todas as receitas
@@ -24,8 +24,18 @@ function filtrarReceitas(categoria) {
   }
   // Funções para abrir e fechar o modal
 function openRecipeModal(recipeId) {
+
   const modal = document.getElementById(recipeId);
-  modal.showModal();
+    modal.showModal();
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.close();
+    });
+
+    // Fecha modal com tecla ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.open) modal.close();
+    });
+  
 }
 
 function closeRecipeModal(recipeId) {
@@ -40,6 +50,7 @@ const state = {
   recipes: [],
   currentFilter: 'todas'
 };
+
 
 // Carregamento do documento
 document.addEventListener('DOMContentLoaded', () => {
@@ -96,33 +107,8 @@ function filterRecipes() {
     // Oculta a receita caso não haja correspondência
     else {
       recipe.style.display = 'none';
+
     }
-  });
-}
-
-// Adiciona o evento de entrada para atualizar a cada tecla digitada
-document.getElementById('searchInput').addEventListener('input', filterRecipes);
-
-// Sistema de filtros
-function initializeFilters() {
-  const filterButtons = document.querySelectorAll('.filter button');
-  const recipes = document.querySelectorAll('.recipe-field');
-
-  filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-          const filter = button.getAttribute('data-filter');
-          state.currentFilter = filter;
-
-          // Atualiza classes ativas dos botões
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          button.classList.add('active');
-
-          // Filtra receitas
-          recipes.forEach(recipe => {
-              const shouldShow = filter === 'todas' || recipe.classList.contains(filter);
-              recipe.style.display = shouldShow ? 'block' : 'none';
-          });
-      });
   });
 }
 
@@ -141,31 +127,6 @@ function initializeModals() {
           if (e.key === 'Escape' && modal.open) modal.close();
       });
   });
-}
-
-// Menu responsivo
-function handleResponsiveMenu() {
-  const menuButton = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('nav');
-
-  if (!menuButton || !nav) return;
-
-  menuButton.addEventListener('click', () => {
-      nav.classList.toggle('active');
-  });
-}
-
-// Utilidades
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-      const later = () => {
-          clearTimeout(timeout);
-          func(...args);
-      };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-  };
 }
 
 // Lazy loading de imagens
