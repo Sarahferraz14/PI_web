@@ -7,6 +7,11 @@ body {
     color: #333;
 }
 
+.main-content {
+    overflow-y: scroll; /* Faz o conteúdo não fixo rolar */
+    height: calc(100vh - 140px); /* Altura ajustada para o espaço disponível */
+}
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -19,6 +24,10 @@ body {
     display: flex;
     padding: 3px 0;
     border-bottom: 1px solid #ddd;
+    position: sticky; /* Torna o header "grudado" */
+    top: 0; /* Fixa no topo da página */
+    z-index: 1000; /* Garante que ele fique acima de outros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destaque */
 
 }
 
@@ -85,24 +94,44 @@ nav {
   nav ul li a:hover {
     color: #ff6347; /* Altere a cor para o hover */
   }
-  
-
-/* Highlight Section */
+/* Estilo da seção de destaque */
 .highlight {
-    background: #ffe0b2;
-    text-align: center;
-    padding: 50px 20px;
+    position: relative;
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: 400px; /* Altura fixa para o destaque */
+    overflow: hidden; /* Garante que nada "vaze" do contêiner */
+}
+
+/* Estilo da imagem */
+.highlight img {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Mantém o centro no foco */
+    width: 100%; /* Faz a imagem ocupar toda a largura */
+    height: auto; /* Mantém a proporção */
+}
+
+/* Texto sobre a imagem */
+.highlight .text-overlay {
+    position: absolute;
+    top: 50%; /* Centraliza o texto verticalmente */
+    left: 50%; /* Centraliza o texto horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza o texto perfeitamente */
+    text-align: center; /* Centraliza o texto internamente */
+    color: white; /* Cor do texto */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Sombra para contraste */
+    z-index: 2; /* Garante que o texto fique acima da imagem */
 }
 
 .highlight h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-    color: #ff5722;
+    font-size: 2.5rem; /* Tamanho do título */
+    margin: 0;
 }
 
 .highlight p {
-    font-size: 18px;
-    color: #333;
+    font-size: 1.2rem; /* Tamanho do texto descritivo */
+    margin: 10px 0 0;
 }
 
 /* Receitas Section */
@@ -186,56 +215,182 @@ nav {
   .slick-dots li button:before {
     color: #ff6347; /* Cor dos pontos */
   }
-  
-/* Container geral do carrossel */
+ /* Estilo do Carrossel */
 .carrossel-container {
     position: relative;
-    width: 80%; /* O tamanho do carrossel */
-    margin: auto;
-    overflow: hidden; /* Oculta vídeos fora da área visível */
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.carrossel-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
 }
 
 .carrossel {
     display: flex;
-    transition: transform 0.5s ease; /* Transição suave ao deslizar */
+    transition: transform 0.5s ease-in-out;
 }
 
 .video {
-    min-width: 100%; /* Cada vídeo ocupa 100% da largura do carrossel */
-    box-sizing: border-box; /* Garante que o tamanho seja exato */
+    flex: 0 0 calc(33.33% - 10px); /* Para 3 vídeos por vez */
+    margin: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 iframe {
-    width: 100%; /* Faz o vídeo ocupar toda a largura */
-    height: 300px; /* Definindo a altura do vídeo */
+    width: 100%;
+    height: 100%;
+    border: none;
+    aspect-ratio: 1 / 1; /* Faz os vídeos serem quadrados */
+    border-radius: 8px;
 }
 
-/* Botões de navegação (anterior e próximo) */
+/* Botões */
 button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     border: none;
-    font-size: 30px;
-    padding: 10px;
+    font-size: 2em;
+    padding: 10px 15px;
     cursor: pointer;
-    z-index: 100;
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .prev {
-    left: 0;
+    left: 10px;
 }
 
 .next {
-    right: 0;
+    right: 10px;
 }
 
-/* Efeito ao passar o mouse sobre os botões */
-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+/* Responsivo */
+@media (max-width: 768px) {
+    .video {
+        flex: 0 0 calc(50% - 10px); /* Exibe 2 vídeos por vez */
+    }
+
+    button {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .video {
+        flex: 0 0 100%; /* Exibe 1 vídeo por vez */
+    }
+}
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #333;
+}
+.linha-com-texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.linha-com-texto h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 10px;
+}
+
+.linha-com-texto span {
+    flex: 1;
+    border-top: 1px solid #ccc;
+    margin: 0 10px;
+}
+
+/* Estilo para o conteúdo adicional */
+.content {
+    position: sticky;
+    top: 180px; /* Ajuste conforme a altura das seções acima */
+    z-index: 998;
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 4px #e48a371a;
+}
+/* Estilo da seção hero */
+.hero-section {
+    background: #ffffff;
+    text-align: center;
+    padding: 80px 5px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #ffffff;
 }
 
 
-    
+/* Estilo do texto */
+.hero-text {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(242, 163, 94, 0.4); /* Fundo semi-transparente para destacar o texto */
+    padding: 40px;
+    border-radius: 40px;
+    animation: fadeInUp 1s ease-out; /* Animação inicial */
+}
+.quick-tips {
+    background-color: #fff8dc;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Impede que as dicas fora do container sejam visíveis */
+}
+
+.tips-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden; /* Esconde as dicas fora da área visível */
+}
+
+.tips-wrapper {
+    display: flex;
+    transition: transform 2s ease; /* Controla a animação de deslizamento */
+    will-change: transform; /* Otimiza o desempenho da animação */
+}
+
+.tip {
+    min-width: 100%; /* Cada dica ocupa toda a largura do container */
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+}
