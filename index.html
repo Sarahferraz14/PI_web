@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receitas Fáceis</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css_index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Hubballi&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <!-- Cabeçalho -->
     <header class="header">
-        <div class="container">
-            <h1 class="logo">Receitas Fáceis</h1>
+        <h1 class="logo">Receitas da vovó </h1>
             <nav class="nav-menu">
                 <ul>
                     <li><a href="index.html">Início</a></li>
@@ -21,44 +22,24 @@
                     <li><a href="sobre.html">Sobre</a></li>
                 </ul>
             </nav>
-        </div>
+            <img src="logo.jpg" alt="logo">
+
     </header>
 
+
+    <!-- Destaque -->
     <section class="highlight">
         <div class="container">
-            <!-- Imagem de fundo -->
-            <img src="https://png.pngtree.com/background/20230413/original/pngtree-food-fruit-poster-illustration-picture-image_2422523.jpg" alt="Imagem de destaque">
-            
-            <!-- Texto sobreposto -->
-            <div class="text-overlay">
-                <h2>Descubra receitas práticas e deliciosas</h2>
-                <p>Escolha a receita perfeita para seu dia a dia e surpreenda na cozinha!</p>
-            </div>
+            <h1>Descubra receitas práticas e deliciosas</h1>
+            <p>Escolha a receita perfeita para seu dia a dia e surpreenda na cozinha!</p>
+            <p>Cada receita foi retirada do antigo livro de receits da Dona Marília, cada uma com o sabor de nossa casa para a sua</p>
         </div>
     </section>
 
-<!-- Seção Hero -->
-<section class="hero-section" id="hero-section">
-    <div class="hero-container">
-        <div class="hero-text">
-            <h2>Descubra receitas práticas e deliciosas</h2>
-            <p>Escolha a receita perfeita para seu dia a dia e surpreenda na cozinha!</p>
-        </div>
-    </div>
-</section>
-
-
     <!-- Seção de Receitas -->
-    <section class="content">
     <section id="receitas" class="receitas">
         <div class="container">
-            <section class="content">
-            <div class="linha-com-texto">
-                <span></span>
-                <h2>Receitas em destaque</h2>
-                <span></span>
-            </div>
-            <section class="content">
+            <h1>Receitas em Destaque</h1>
             <div class="grid">
                 <div class="card">
                     <img src="https://via.placeholder.com/300x200" alt="Receita 1">
@@ -84,73 +65,34 @@
         </div>
     </section>
 
-        <div class="carrossel-container">
-            <div class="linha-com-texto">
-                <span></span>
-                <h2>Recomendações de videos</h2>
-                <span></span>
+
+    <div class="carrossel-container">
+        <h1>Recomendações de videos</h1>
+        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+        
+        <div class="carrossel">
+            <!-- Embeds de vídeos do YouTube -->
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <p>Videos de receitas</p>
-            
-            <button class="prev">&#10094;</button>
-            
-            <div class="carrossel">
-                <!-- Embeds de vídeos do YouTube -->
-                <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/sUyp1wuaOa0?si=ioW7VnAwHr7MpCrU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xfZ4NIcRO-c?si=DRiLBezTcHWAFdXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/yehgiAaxuaE?si=MTjK_H-m1dacudwH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/I1RkaC5KbjY?si=RdGwCm9CVHGqXWt6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qyO-k7-380A?si=mpp7jHeDJ9Zj9nXl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WQPLlAff_6o?si=ak3irfIwg16L2AkG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZPt2Jy9UDkk?si=el7bFeyi7LqrWq2q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xaQVaa6PpCM?si=2XfXG05WS7gJRepV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/A8KTWSvNgzY?si=vHT7VFJ6Pf-KAtf-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <button class="next">&#10095;</button>
-            <div class="carousel-indicators">
-                <span class="indicator active"></span>
-                <span class="indicator"></span>
-                <span class="indicator"></span>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/kJQP7kiw5Fk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         
-        <section class="quick-tips">
-            <h2>Dicas Rápidas</h2>
-            <div class="tips-container">
-                <div class="tips-wrapper">
-                    <p class="tip">Adicione sal apenas no final do cozimento do arroz.</p>
-                    <p class="tip">Para um bolo mais fofinho, peneire a farinha antes de usar.</p>
-                    <p class="tip">Use água morna para ativar o fermento biológico.</p>
-                    <p class="tip">Congele ervas em azeite para facilitar o uso.</p>
-                </div>
-            </div>
-        </section>
-        
-    <script src="scriptinicial.js"></script>
+        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+    </div>
+
+    <script src="script.js"></script>
     <!-- Rodapé -->
     <footer class="footer">
         <div class="container">
-            <p>© 2024 Receitas Fáceis. Todos os direitos reservados.</p>
+            <p>© 2024 Receitas da vovò. Todos os direitos reservados a Eloise, Leivas, Bordin & Sarah.</p>
         </div>
     </footer>
 
-/body>
+</body>
 </html>
