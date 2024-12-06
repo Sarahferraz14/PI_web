@@ -3,6 +3,37 @@ const imagesToShow = 4; // Número de imagens visíveis ao mesmo tempo
 const images = document.querySelectorAll(".carousel img");
 const carousel = document.querySelector(".carousel");
 
+const searchInput = document.getElementById('searchInput');
+
+searchInput.addEventListener('input', (event) => {
+  const value = event.target.value
+
+  const itens = document.querySelectorAll('.recipe-field');
+  const noResults = document.getElementById('no_results');
+
+  let hasResults = false;
+  
+  itens.forEach(recipe => {
+    if(formaString(recipe.textContent).indexOf(value) !== -1) {
+      recipe.style.display = 'block';
+
+      hasResults = true;
+    } else {
+      recipe.style.display = 'none';
+    }
+ })
+
+ if (hasResults)  {
+  noResults.style.display = 'none';
+ } else {
+  noResults.style.display = 'block';
+ }
+});
+
+function formaString(value) {
+    return value.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
 function filtrarReceitas(categoria) {
     // Seleciona todas as receitas
     let receitas = document.querySelectorAll('.recipe-field');
@@ -51,24 +82,19 @@ const state = {
   currentFilter: 'todas'
 };
 
-function botaoFiltro(categoria) {
-  // Seleciona todas as receitas
-  let receitas = document.querySelectorAll('.recipe-field');
 
-  // Itera sobre todas as receitas
-  receitas.forEach(function(receita) {
-    // Mostra todas as receitas se o filtro for "todas"
-    if (categoria === 'todas') {
-      receita.style.display = 'block';
-    } else {
-      // Mostra as receitas da categoria correspondente e esconde as outras
-      if (receita.classList.contains(categoria)) {
-        receita.style.display = 'block';
-      } else {
-        receita.style.display = 'none';
-      }
-    }
-  });
+// Carregamento do documento
+document.addEventListener('DOMContentLoaded', () => {
+  initializeCarousels();
+});
+
+// Função de utilidade para debounce
+function debounce(func, wait = 20) {
+  let timeout;
+  return function(...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), wait);
+  };
 }
 
 // Gerenciamento de modais
@@ -112,27 +138,10 @@ function handleError(error) {
   // Implementar sistema de notificação para o usuário
 }
 
-// Validação de formulários
-function validateForm(form) {
-  const inputs = form.querySelectorAll('input, textarea');
-  let isValid = true;
-
-  inputs.forEach(input => {
-      if (input.hasAttribute('required') && !input.value.trim()) {
-          isValid = false;
-          input.classList.add('error');
-      } else {
-          input.classList.remove('error');
-      }
-  });
-
-  return isValid;
-}
-
 // Sistema de notificações
 function showNotification(message, type = 'info') {
   const notification = document.createElement('div');
-  notification.className = `notification ${type}`;
+  notification.className = notification (type);
   notification.textContent = message;
   
   document.body.appendChild(notification);
@@ -142,21 +151,61 @@ function showNotification(message, type = 'info') {
   }, 3000);
 }
 
-const videos = document.querySelectorAll('.carrossel .video'); // Todos os vídeos no carrossel
 
-// Função para mover o carrossel
-function moveCarousel(direction) {
-    // Calcula o novo índice
-    currentIndex += direction;
-    
-    // Impede que o carrossel ultrapasse os limites
-    if (currentIndex < 0) {
-        currentIndex = videos.length - 1; // Vai para o último vídeo
-    } else if (currentIndex >= videos.length) {
-        currentIndex = 0; // Volta para o primeiro vídeo
-    }
-    
-    // Altera a posição do carrossel
-    document.querySelector('.carrossel').style.transform = `translateX(-${currentIndex * 100}%)`;
+// Função para detectar elementos visíveis na tela
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight && rect.bottom >= 0;
 }
 
+// Detecta e adiciona animações
+function handleScroll() {
+  const section = document.querySelector(".scroll-effect-section .content");
+  if (isElementInViewport(section)) {
+      section.classList.add("visible");
+  }
+}
+
+// Escuta o evento de rolagem
+document.addEventListener("scroll", handleScroll);
+window.addEventListener('scroll', function() {
+  const body = document.body;
+  if (window.scrollY > 50) { // Defina o limite para a rolagem
+      body.classList.add('scrolled');
+  } else {
+      body.classList.remove('scrolled');
+  }
+});
+document.addEventListener("scroll", () => {
+  const image = document.getElementById("hero-image");
+  const section = document.getElementById("hero-section");
+
+  // Posição da seção em relação ao scroll
+  const sectionTop = section.getBoundingClientRect().top;
+  const sectionHeight = section.offsetHeight;
+
+  // Calcula a opacidade com base no scroll
+  const opacity = Math.max(0, 1 - sectionTop / sectionHeight);
+
+  // Aplica os estilos de opacidade e transformação
+  image.style.opacity = opacity;
+  image.style.transform = translateY($((-1) * (1 - opacity) * 50 )); // Move a imagem para cima
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tips = document.querySelectorAll('.tip');
+  let currentTipIndex = 0;
+
+  function showNextTip() {
+      // Remove classe ativa da dica atual
+      tips[currentTipIndex].classList.remove('active');
+      currentTipIndex = (currentTipIndex + 1) % tips.length; // Avança para a próxima dica
+      // Adiciona classe ativa à nova dica
+      tips[currentTipIndex].classList.add('active');
+  }
+
+  // Inicializa o efeito mostrando a primeira dica
+  tips[currentTipIndex].classList.add('active');
+  // Alterna a cada 5 segundos
+  setInterval(showNextTip, 5000);
+});
