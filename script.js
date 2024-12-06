@@ -3,6 +3,37 @@ const imagesToShow = 4; // Número de imagens visíveis ao mesmo tempo
 const images = document.querySelectorAll(".carousel img");
 const carousel = document.querySelector(".carousel");
 
+const searchInput = document.getElementById('searchInput');
+
+searchInput.addEventListener('input', (event) => {
+  const value = event.target.value
+
+  const itens = document.querySelectorAll('.recipe-field');
+  const noResults = document.getElementById('no_results');
+
+  let hasResults = false;
+  
+  itens.forEach(recipe => {
+    if(formaString(recipe.textContent).indexOf(value) !== -1) {
+      recipe.style.display = 'block';
+
+      hasResults = true;
+    } else {
+      recipe.style.display = 'none';
+    }
+ })
+
+ if (hasResults)  {
+  noResults.style.display = 'none';
+ } else {
+  noResults.style.display = 'block';
+ }
+});
+
+function formaString(value) {
+    return value.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
 function filtrarReceitas(categoria) {
     // Seleciona todas as receitas
     let receitas = document.querySelectorAll('.recipe-field');
@@ -66,52 +97,6 @@ function debounce(func, wait = 20) {
   };
 }
 
-// Sistema de busca
-function initializeSearch() {
-  const searchInput = document.querySelector('.search-bar input');
-  if (!searchInput) return;
-
-  searchInput.addEventListener('input', debounce((e) => {
-      const searchTerm = e.target.value.toLowerCase();
-      const recipes = document.querySelectorAll('.recipe-field');
-
-      recipes.forEach(recipe => {
-          const title = recipe.querySelector('h2')?.textContent.toLowerCase();
-          const description = recipe.querySelector('p')?.textContent.toLowerCase();
-          const shouldShow = !searchTerm || 
-                           title?.includes(searchTerm) || 
-                           description?.includes(searchTerm);
-          
-          recipe.style.display = shouldShow ? 'block' : 'none';
-      });
-  }, 300));
-}
-
-function filterRecipes() {
-  const query = document.getElementById('searchInput').value.toLowerCase();
-  const recipes = document.querySelectorAll('.recipe-field');
-
-  recipes.forEach(recipe => {
-    // Obtém a categoria e o nome da receita
-    const recipeCategory = recipe.classList.contains('doce') ? 'doce' : 'salgado';
-    const recipeName = recipe.querySelector('h2').textContent.toLowerCase();
-
-    // Exibe todas as receitas se o campo de busca estiver vazio
-    if (!query) {
-      recipe.style.display = 'block';
-    } 
-    // Exibe a receita se a categoria ou o nome corresponder ao termo de busca
-    else if (recipeCategory.includes(query) || recipeName.includes(query)) {
-      recipe.style.display = 'block';
-    } 
-    // Oculta a receita caso não haja correspondência
-    else {
-      recipe.style.display = 'none';
-
-    }
-  });
-}
-
 // Gerenciamento de modais
 function initializeModals() {
   const modals = document.querySelectorAll('.recipe-modal');
@@ -153,27 +138,10 @@ function handleError(error) {
   // Implementar sistema de notificação para o usuário
 }
 
-// Validação de formulários
-function validateForm(form) {
-  const inputs = form.querySelectorAll('input, textarea');
-  let isValid = true;
-
-  inputs.forEach(input => {
-      if (input.hasAttribute('required') && !input.value.trim()) {
-          isValid = false;
-          input.classList.add('error');
-      } else {
-          input.classList.remove('error');
-      }
-  });
-
-  return isValid;
-}
-
 // Sistema de notificações
 function showNotification(message, type = 'info') {
   const notification = document.createElement('div');
-  notification.className = `notification ${type}`;
+  notification.className = notification (type);
   notification.textContent = message;
   
   document.body.appendChild(notification);
@@ -221,7 +189,7 @@ document.addEventListener("scroll", () => {
 
   // Aplica os estilos de opacidade e transformação
   image.style.opacity = opacity;
-  image.style.transform = `translateY(${-(1 - opacity) * 50}px)`; // Move a imagem para cima
+  image.style.transform = translateY($((-1) * (1 - opacity) * 50 )); // Move a imagem para cima
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -241,4 +209,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // Alterna a cada 5 segundos
   setInterval(showNextTip, 5000);
 });
-

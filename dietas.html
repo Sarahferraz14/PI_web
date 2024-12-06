@@ -4,52 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dietas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dietas.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Hubballi&display=swap" rel="stylesheet">
+  
 </head>
 <body>
-    <header class="header">
-        <a href="index.html" class="logo"></a>
-        <ul class="nav-list">
-          <li><a href="index.html">Inicial</a></li>
-          <li><a href="receitas.html">Receitas</a></li>
-          <li><a href="dietas.html">Dietas</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
+  <header class="header">
+    <h1 class="logo">Receitas da vovó </h1>
+    
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="receitas.html">Receitas</a></li>
+            <li><a href="dietas.html">Dietas</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
         </ul>
-      </header>
+    </nav>
+    <img src="logo.jpg" alt="logo">
+</header>
     <main class="recipes-container">
      
         <div class="recipe-field doce">
-            <img src="Imagens/trigo.webp" alt="Gluten">
-            <h2>Glúten</h2>
-            <p>(G)</p>
+          <div class="card">
+            <img src="https://i.pinimg.com/736x/f9/52/0a/f9520a6d106b84ca8acaa64ef7bcfe99.jpg" alt="Gluten">
+            <h2>Glúten (G)</h2>
             <button onclick="openRecipeModal('gluten')">Saiba mais</button>
         </div>
+      </div>
     
         <div class="recipe-field salgada">
-          <img src="Imagens/acucar.avif" alt="Açucar">
-          <h2>Alto em Açúcar</h2>
-          <p>(A)</p>
+          <div class="card">
+          <img src="https://i.pinimg.com/736x/09/3f/94/093f948d1087dedada54ae9f7e199cdd.jpg" alt="Açucar">
+          <h2>Alto em Açúcar (A)</h2>
           <button onclick="openRecipeModal('acucar')">Saiba mais</button>
         </div>
+      </div>
     
         
-        <div class="recipe-field doce">
-
-          <img src="Imagens/vegano.png" alt="Vegano">
-          <h2>Vegano</h2>
-          <p>(V)</p>
+      <div class="recipe-field doce">
+        <div class="card">
+          <img src="https://i.pinimg.com/736x/a2/92/7f/a2927ff746c11fa5eb27a1be8ae3f3a5.jpg" alt="Vegano">
+          <h2>Vegano (V)</h2>
           <button onclick="openRecipeModal('vegano')">Saiba mais</button>
         </div>
+      </div>
     
         <div class="recipe-field doce">
-          <img src="Imagens/leite.png" alt="Lactose">
-          <h2>Lactose</h2>
-          <p>(L)</p>
+          <div class="card">
+          <img src="https://i.pinimg.com/736x/f8/b2/0a/f8b20af17e43d58130a7b8342a26c369.jpg" alt="Lactose">
+          <h2>Lactose (L)</h2>
           <button onclick="openRecipeModal('lactose')">Saiba mais</button>
         </div>
+        </div>
+
     </main>
     </br>
-        <p> Algumas pessoas podem possuir alguma restrição ou preferências para comidas. Se você se encaixa em um destes perfis, veja qual é o simbolo que representa tal restrição e verifique a presença do mesmo em todas as receitas para sua segurança.</p>
+
+    <div class="container"> 
+      <section id="qm_somos" class="qm_somos">
+  <h1>Observação: </h1>
+  <p> Algumas pessoas podem possuir alguma restrição ou preferências para comidas.</p>
+  <p> Se você se encaixa em um destes perfis, veja qual é o simbolo que representa tal restrição e verifique a presença do mesmo em todas as receitas para sua segurança.</p>
+  <br/>
+
+  </section>
     <dialog id="gluten" class="recipe-modal">
         <div class="modal-content">
             <button class="close-x" onclick="closeRecipeModal('gluten')">&times;</button>
@@ -113,8 +133,13 @@
             
         </div>
       </dialog>
-
+      <footer class="footer">
+        <div class="container">
+                 <p>© 2024 Receitas da vovò. Todos os direitos reservados a Eloise, Leivas, Bordin & Sarah.</p>
+             </div>
+            </div>
+        </footer>
       <script src="script.js"></script>
-    <!--vegetariana, vegana, light, fitness, diet, sem glúten, sem lactose-->
+
 </body>
 </html>
