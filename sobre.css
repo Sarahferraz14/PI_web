@@ -1,4 +1,3 @@
-/* Global Styles */
 body {
     font-family: "Hubballi", sans-serif;
     font-size: 22px;
@@ -20,21 +19,19 @@ body {
     font-style: normal;
   }
 
-
-
-/* Header */
 .header {
     display: flex;
     padding: 3px 0;
     border-bottom: 1px solid #023021;
 }
 
-.header h1 {
+.header h1{
     text-align: flex;
-    padding: 3px 0
+    padding: 3px 0;
+
 }
 
-  .header img{
+.header img{
     text-align: flex;
     width: 100%;
     width: 150px;
@@ -42,7 +39,7 @@ body {
     object-fit: fill;
 }
 
-.logo {
+.logo{
     font-family: "Homemade Apple", cursive;
     font-style: normal;
     color: #023021;
@@ -76,46 +73,22 @@ nav {
     justify-content: center; /* Centraliza os itens */
     align-items: center;
     width: 100%;
-  }
+}
 
 .qm_somos h1 {
-    color: #023021;
+color: #023021;
 }
-    
+
 p,h3 {
     text-align: left;
     font-size: 28px;
-    margin-bottom: px;
     margin-left: 10px;
 }
-
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
-
-.highlight h1 {
-    font-size: 32px;
-    margin-bottom: 5px;
-    color: #023021;
-    text-align: left;
-}
-
-.highlight p {
-    text-align: left;
-    font-size: 28px;
-    margin-bottom: px;
-    margin-left: 10px;
-
-}
-
-/* Receitas Section */
-.receitas h1{
-    color: #023021;
-}
-
-
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -137,94 +110,9 @@ p,h3 {
     object-fit: cover;
 }
 
-.card h3 {
-    color: #023021;
-}
-
-
-/* Footer */
 .footer {
     background: #023021;
     color: #e9dfcf;
     text-align: center;
     padding: 15px 0;
 }
-  
-.carrossel-container h1 {
-    font-size: 32px;
-    margin-bottom: 5px;
-    color: #023021;
-    text-align: left;
-}
-  
-  
-  /* Customizando o deslizante de pontos */
-  .slick-dots {
-    bottom: 10px;
-  }
-  .slick-dots li button:before {
-    color: #023021; /* Cor dos pontos */
-  }
- /* Estilo do Carrossel */
-.carrossel-container {
-    position: relative;
-    max-width: 1200px;
-    margin: 20px auto;
-    overflow: hidden;
-}
-
-.carrossel-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.8em;
-}
-
-.carrossel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.video {
-    flex: 0 0 calc(33.33% - 10px); /* Para 3 vídeos por vez */
-    margin: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    aspect-ratio: 1 / 1; /* Faz os vídeos serem quadrados */
-    border-radius: 8px;
-}
-
-/* Botões */
-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color:#e9dfcf;
-    border: none;
-    font-size: 2em;
-    padding: 10px 15px;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-button:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-    

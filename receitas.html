@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Receitas</title>
-  <link rel="stylesheet" href="css_receitas.css">
+  <link rel="stylesheet" href="receitas.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Hubballi&display=swap" rel="stylesheet">
@@ -12,151 +12,200 @@
 
 <body>
   <header class="header">
-    <h1 class="logo">Receitas da vovó</h1>
+    <h1 class="logo">Receitas da vovó </h1>
     
     <nav class="nav-menu">
-    <ul class="nav-list">
-      <li><a href="index.html">Inicial</a></li>
-      <li><a href="receitas.html">Receitas</a></li>
-      <li><a href="dietas.html">Dietas</a></li>
-      <li><a href="sobre.html">Sobre</a></li>
-    </ul>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="receitas.html">Receitas</a></li>
+            <li><a href="dietas.html">Dietas</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+        </ul>
     </nav>
     <img src="logo.jpg" alt="logo">
+</header>
 
-  </header>
-
-   <!-- arrumar para filtar as buscas e colocar um lupa no canto direito para ficar bonito -->
    <nav class="main-nav">
     <form class="search-bar" onsubmit="filterSearch(event)">
       <input type="text" id="searchInput" placeholder="Buscar receita...">
-      <button type="submit">
-        <span class="icon"><i class="fas fa-search"></i></span></span>
+      <i class="fas fa-search icon"></i>
       </button>
     </form>
   </nav>
+  
   <section class="filter">
-    <button onclick="botaoFiltro('todas')">Todas</button>
-    <button onclick="botaoFiltro('doce')">Doces</button>
-    <button onclick="botaoFiltro('salgada')">Salgadas</button>
-    <button onclick="botaoFiltro('saudavel')">Saudável</button>
+    <button onclick="filtrarReceitas('todas')">Todas</button>
+    <button onclick="filtrarReceitas('doce')">Doces</button>
+    <button onclick="filtrarReceitas('salgada')">Salgadas</button>
+    <button onclick="filtrarReceitas('saudavel')">Saudável</button>
   </section>
 
-  <main class="recipes-container">
+  <div class="recipes-container">
      
     <div class="recipe-field doce">
+      <div class="card">
         <img src="https://cdn.urbano.com.br/uploads/torta-de-limao-282035108-800.jpg" alt="Torta de limão">
         <h2>Torta de limão</h2>
-        <p>Torta de limão</p>
         <button onclick="openRecipeModal('recipe1')">Ver receita</button>
+    </div>
     </div>
 
     <div class="recipe-field salgada">
+      <div class="card">
       <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinqPGF1wOuk4TTFXoLZAp7QwP0B208NUpxXR0buRXlEVAnZR8znA7pJwk8XLqjxaTAoGOWeI_DENPrWVSOA33zFaaUW7yCIjom6-4WBulX0Gpqi0e8wayfANfd1l3hpuL5CmJCqsfYSJDo/s1600/casaecozinha.com_cozinha_2015_receita_pao_de_minuto.jpg" alt="Pão caseiro">
       <h2>Pão caseiro</h2>
-      <p>Pão caseiro</p>
       <button onclick="openRecipeModal('recipe2')">Ver receita</button>
+      </div>
     </div>
 
     
     <div class="recipe-field doce">
+      <div class="card">
       <img src="https://cloudfront-us-east-1.images.arcpublishing.com/estadao/THUHXGIGTBLOTH64QNZ3OJ5Z64.jpg" alt="Bolo de cenoura">
       <h2>Bolo de cenoura</h2>
-      <p>Bolo de cenoura</p>
       <button onclick="openRecipeModal('recipe3')">Ver receita</button>
+      </div>
     </div>
 
     <div class="recipe-field doce">
+      <div class="card">
       <img src="https://cooknenjoy.com/wp-content/uploads/2021/12/Biscoito-Natalino-01-1920x1442.jpg" alt="Biscoito amanteigado">
       <h2>Biscoito Amanteigado</h2>
-      <p>Biscoito Amanteigado</p>
       <button onclick="openRecipeModal('recipe4')">Ver receita</button>
+      </div>
     </div>
 
     <div class="recipe-field salgada">
+      <div class="card">
       <img src="https://i.panelinha.com.br/i1/64-bk-5577-risoto-de-limao-siciliano.webp" alt="">
       <h2>Risoto de limão siciliano</h2>
-      <p>Risoto de limão siciliano</p>
       <button onclick="openRecipeModal('recipe5')">Ver receita</button>
     </div>
+    </div>
 
     <div class="recipe-field salgada">
+      <div class="card">
       <img src="https://storage.googleapis.com/imagens_videos_gou_cooking_prod/production/mesas/2019/11/568c6149-casquinha-de-siri-_-tm-tabuleiro-da-baiana-_-carlos-ribeiro-_-6616-baixa-2.jpg" alt="Casquinha de Siri">
       <h2>Casquinha de Siri</h2>
-      <p>Casquinha de Siri</p>
       <button onclick="openRecipeModal('recipe6')">Ver receita</button>
     </div>
+    </div>
 
     <div class="recipe-field salgada">
+      <div class="card">
       <img src="https://moinhoglobo.com.br/wp-content/uploads/2018/09/24-panqueca.jpg" alt="Massa de Panqueca">
       <h2>Massa de Panqueca </h2>
-      <p>Massa de Panqueca</p>
       <button onclick="openRecipeModal('recipe7')">Ver Receita</button>
     </div>
+    </div>
 
     <div class="recipe-field saudavel">
+      <div class="card">
       <img src="imagens/torta-frango.jpg" alt="Torta frango">
       <h2>Tortinha de colher</h2>
-      <p>Tortinha de colher</p>
       <button onclick="openRecipeModal('recipe8')">Ver receita</button>
+    </div>
     </div>
 
     <div class="recipe-field doce">
+      <div class="card">
       <img src="https://th.bing.com/th/id/OIP.S2OemNlGnH7Z-Rrm5-JMKwHaEx?w=272&h=180&c=7&r=0&o=5&pid=1.7" alt="Brigadeirão">
       <h2>Brigadeirão</h2>
-      <p>Brigadeirão</p>
       <button onclick="openRecipeModal('recipe9')">Ver receita</button>
     </div>
+    </div>  
 
     <div class="recipe-field doce">
+      <div class="card">
       <img src="imagens/smoothie-morango.png" alt="Smoothie de Morango e Banana">
       <h2>Smoothie de Morango</h2>
-      <p>Smoothie de Iogurte com <br> Morango e Banana</p>
       <button onclick="openRecipeModal('recipe8')">Ver receita</button>
+    </div>
     </div>
 
     <div class="recipe-field salgada">
+      <div class="card">
       <img src="imagens/paodequeijo.jpg" alt="Pão de Queijo">
       <h2>Pão de Queijo</h2>
-      <p>Pão de Queijo</p>
       <button onclick="openRecipeModal('recipe10')">Ver receita</button>
+    </div>
     </div>
 
     <div class="recipe-field saudavel">
+      <div class="card">
       <img src="imagens/biscoitos-aveia.webp" alt="Biscoitos de Aveia e Mel">
       <h2>Biscoitos de Aveia e Mel</h2>
-      <p>Biscoitos de Aveia e Mel</p>
       <button onclick="openRecipeModal('recipe11')">Ver receita</button>
     </div>
+    </div>
 
     <div class="recipe-field salgada">
+      <div class="card">
       <img src="https://th.bing.com/th/id/R.63080b9e272727d98774043933b62d4e?rik=GrWXEovxt22pug&pid=ImgRaw&r=0" alt="Massa de pizza">
       <h2>Massa de pizza</h2>
-      <p>Massa de pizza</p>
       <button onclick="openRecipeModal('recipe12')">Ver receita</button>
     </div>
+    </div>
 
     <div class="recipe-field doce">
+      <div class="card">
       <img src="https://th.bing.com/th/id/OIP.uXp96TVAAIQBRJ5fc-FIHgHaG-?rs=1&pid=ImgDetMain" alt="Pudim de leite condensado">
       <h2>Pudim de leite condensado</h2>
-      <p>Pudim de leite condensado</p>
       <button onclick="openRecipeModal('recipe13')">Ver receita</button>
     </div> 
+    </div>
 
     <div class="recipe-field salgada">
+      <div class="card">
       <img src="https://www.canadainbox.com/wp-content/webp-express/webp-images/uploads/2021/03/como-fazer-poutine-1-683x1024.jpg.webp" alt="Poutine">
       <h2>Poutine</h2>
-      <p>Poutine</p>
       <button onclick="openRecipeModal('recipe14')">Ver receita</button>
+    </div>
     </div>
 
     <div class="recipe-field doce">
+      <div class="card">
       <img src="imagens/Cheesecake-de-Romeu-e-Julieta.webp" alt="Cheesecake">
       <h2>Cheesecake Romeu e Julieta</h2>
-      <p>Cheesecake Romeu e Julieta</p>
       <button onclick="openRecipeModal('recipe15')">Ver Receita</button>
     </div>
-    </main>
+    </div>
+
+    <div class="recipe-field saudavel">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ33UiahpMCUxIdB6BXbfCTlbQ62Hb8c8ibug&s" alt="Receita 2">
+        <h2>Clafoutis de Abobrinha</h2>
+      <button onclick="openRecipeModal('recipe16')">Ver receita</button>
+    </div>
+    </div>
+
+    <div class="recipe-field salgada">
+      <div class="card">
+        <img src="https://renata.com.br/images/receitas/140/renata-imagem-receitas-espaguete-ao-molho-sugo-share.jpg" alt="Receita 3">
+        <h2>Espaguete com Molho</h2>
+      <button onclick="openRecipeModal('recipe17')">Ver receita</button>
+    </div>
+    </div>
+
+    <div class="recipe-field salgada">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTawBkd_0hRIojsevBSPa-FqXcOIzHIn5UMeQ&s" alt="Receita 4">
+        <h2>Roseta de Peixe</h2>
+      <button onclick="openRecipeModal('recipe18')">Ver receita</button>
+    </div>
+    </div>
+
+    <div class="recipe-field salgada">
+      <div class="card">
+        <img src="https://i.panelinha.com.br/i1/bk-7667-cp2022-12-08-0848.webp" alt="Receita 1">
+        <h2>Papilote de Frango</h2>
+      <button onclick="openRecipeModal('recipe19')">Ver receita</button>
+    </div>
+    </div>
+
+  </div>
+
+
 
 <dialog id="recipe1" class="recipe-modal">
   <div class="modal-content">
@@ -818,12 +867,184 @@
     </div>
   </dialog>
 
-  <dialog id="no_results" class="no_results"> 
+  <dialog id="recipe16" class="recipe-modal">
+    <div class="modal-content">
+        <button class="close-x" onclick="closeRecipeModal('recipe16')">&times;</button>
+        <h2>Clafoutis de abobrinha</h2>
+  
+        <div class="recipe-info">
+          <span><i class="fas fa-clock"></i> Preparo:  minutos</span>
+          <span><i class="fas fa-signal"></i> Dificuldade: Médio</span>
+          <span><i class="fas fa-dollar-sign"></i> Custo: Médio</span>
+        </div>
+  
+        <div class="recipe-details">
+            <h3>Ingredientes:</h3>
+            <ul>
+            <li>2 abobrinhas pequenas</li>
+            <li>200 g de queijo minas (frescal) em peça</li>
+            <li>1½ xícara (chá) de tomate-cereja (cerca de 200 g)</li>
+            <li>4 ovos</li>
+            <li>1 xícara (chá) de leite</li>
+            <li> ¾ de xícara (chá) de farinha de trigo</li>               
+            <li>    1 colher (chá) de azeite</li>
+            <li>1½ colher (chá) de sal</li>
+            <li> noz-moscada ralada na hora a gosto </li>
+            <li>pimenta-do-reino em grãos moída na hora a gosto</li>
+            </ul>
+            
+            <h3>Modo de Preparo:</h3>
+            <ol>
+            <li>Preaqueça forno a 180 ºC (temperatura média). Escolha um refratário redondo de cerca de 30 cm de diâmetro.
+              <li>Lave e seque os tomates-cereja e as abobrinhas. Descarte as pontas e corte as abobrinhas em meias-luas. Com a ponta de uma faquinha para legumes, corte um X na base de cada tomate. Esprema delicadamente cada um para extrair o líquido e as sementes.
+              <li>Corte o queijo minas em cubinhos de cerca de 1 cm. Reserve.
+              <li>Leve ao fogo médio uma frigideira, de preferência antiaderente, para aquecer. Regue com ½ colher (chá) de azeite e acrescente metade das abobrinhas. Tempere com sal e pimenta-do-reino moída na hora a gosto e deixe dourar por cerca de 2 minutos de cada lado. Transfira as abobrinhas douradas para um prato, regue a frigideira com o restante do azeite e repita com a outra metade.
+              <li>Numa tigela, quebre um ovo de cada vez e transfira para outra tigela maior - se um estiver estragado você não perde toda a receita. Acrescente a farinha aos poucos, misturando com o batedor de arame para não empelotar. Misture o leite e tempere com sal, pimenta-do-reino moída na hora e noz-moscada.
+              <li>Distribua os tomates-cereja, as fatias de abobrinha e os cubos de queijo no fundo do refratário. Cubra delicadamente com a mistura de ovos. Leve ao forno para assar até estufar e dourar, cerca de 30 minutos.
+              <li>Retire do forno e sirva a seguir. O clafoutis fica ótimo servido com molho de azeitona verde e manjericão.
+            </ol>
+        </div>
+    </div>
+  </dialog>
+
+
+  <dialog id="recipe17" class="recipe-modal">
+    <div class="modal-content">
+        <button class="close-x" onclick="closeRecipeModal('recipe17')">&times;</button>
+        <h2>Macarão com mollho </h2>
+  
+        <div class="recipe-info">
+          <span><i class="fas fa-clock"></i> Preparo: 40 minutos</span>
+          <span><i class="fas fa-signal"></i> Dificuldade: Fácil</span>
+          <span><i class="fas fa-dollar-sign"></i> Custo: Médio</span>
+        </div>
+  
+        <div class="recipe-details">
+            <h3>Ingredientes:</h3>
+            <h4>Molho:</h4>
+            <ul>
+                <li>3 kg de tomate italiano maduro</li>
+                <li>1½ cebola</li>
+                <li>2 colheres (sopa) de azeite</li>
+                <li>sal e pimenta-do-reino moída na hora a gosto</li>
+            </ul>
+
+            <h4>Macarão:</h4>
+            <ul>
+                <li>500 g de macarrão espaguete</li>
+                <li></li>folhas de manjericão a gosto para servir</li>
+                <li>burrata para servir</li>
+                <li></li>azeite, sal e pimenta-do-reino moída na hora a gosto </li>
+            </ul>
+            
+            <h3>Modo de Preparo:</h3>
+            <h4>Molho:</h4>
+            <ol>
+              <li>Descasque e pique fino as cebolas.</li>
+              <li>Leve uma panela grande com água ao fogo alto para ferver. Enquanto isso, lave os tomates e, com uma faca, corte um X na base de cada um. Separe uma tigela grande com água e gelo.</li>
+              <li>Assim que a água começar a ferver, mergulhe cerca de 6 tomates de cada vez e deixe cozinhar até que a pele comece a rachar. Com uma escumadeira, transfira os tomates para a tigela com água e gelo — com o choque térmico, fica mais fácil descascar. A partir do corte em X, puxe e descarte a pele. Reserve os tomates pelados numa tigela e repita o processo com o restante — reponha o gelo na tigela quantas vezes forem necessárias para manter a água bem fria.</li>
+              <li>Leve uma panela grande ao fogo médio para aquecer. Regue com o azeite, adicione a cebola picada e tempere com uma pitada de sal e uma de pimenta. Deixe a cebola cozinhar por cerca de 10 minutos, mexendo de vez em quando, até ficar bem macia e com a cor mais amarelada — essa etapa do refogado é essencial, porque deixa a cebola com o sabor mais adocicado e, com isso, o molho menos ácido.</li>
+              <li>Enquanto isso, corte os tomates ao meio e descarte as sementes. Transfira os tomates para o liquidificador em etapas e bata sem acrescentar água: para preparar um molho mais rústico, com pedaços, bata no modo pulsar para triturar; se preferir um molho tradicional mais fluido, bata até ficar liso.</li>
+              <li>Junte os tomates batidos à cebola refogada, tempere com sal e misture bem. Deixe cozinhar em fogo médio até começar a ferver. Abaixe o fogo e deixe cozinhar por cerca de 1 hora, mexendo de vez em quando, até que o molho fique encorpado — atenção, dependendo do tamanho de sua panela, mais funda ou mais larga, o tempo total de cozimento pode variar.</li>
+              <li>Prove o molho e, se necessário, acerte o sal. Desligue o fogo e reserve.</li>
+            </ol>
+            <h4>Macarão:</h4>
+            <ol>
+              <li>Ferva o leite com a manteiga.</li>
+              <li>Em um liquidificador, bata a ricota e vá adicionando o leite fervente para desfazê-la completamente.</li>
+              <li>Acrescente o leite condensado e os ovos, e volte a bater.</li>
+              <li>Despeje sobre a Massa.</li>
+              <li>Leve ao forno à temperatura de 180°C por cerca de 30 minutos</li>
+            </ol>
+        </div>
+    </div>
+  </dialog>
+
+  <dialog id="recipe18" class="recipe-modal">
+    <div class="modal-content">
+        <button class="close-x" onclick="closeRecipeModal('recipe18')">&times;</button>
+        <h2>Roseta de peixe </h2>
+  
+        <div class="recipe-info">
+          <span><i class="fas fa-clock"></i> Preparo: 30 minutos</span>
+          <span><i class="fas fa-signal"></i> Dificuldade: Médio</span>
+          <span><i class="fas fa-dollar-sign"></i> Custo: Alto</span>
+        </div>
+  
+        <div class="recipe-details">
+            <h3>Ingredientes:</h3>
+            <h4>Roseta de peixe: </h4>
+            <ul>
+                <li>4 filés de pescada branca (cerca de 80 g cada)</li>
+                  <li>¼ de xícara (chá) de vinho branco</li>
+                  <li>azeite a gosto</li>
+                  <li>sal e pimenta-do-reino moída na hora a gosto</li>
+            </ul>
+            
+            <h3>Modo de Preparo:</h3>
+            <ol>
+                <li>TPreaqueça o forno a 180 ºC (temperatura média).</li>
+                <li>Separe alguns palitos de dente para a montagem das rosetas. Corte 2 pedaços grandes de papel alumínio de cerca de 50 cm.</li>
+                <li>Tempere os filés de peixe com sal e pimenta a gosto. Para montar as rosetas: corte cada filé ao meio, no sentido do comprimento, formando duas tiras. Junte a ponta de uma com a ponta da outra, formando uma tira longa. Enrole a tira sobre ela mesma, formando a roseta, e prenda com palitos de dente. Repita com os outros filés para formar 4 rosetas.</li>
+                <li>Para montar os papilotes: num prato fundo, coloque uma folha de papel-alumínio, com a parte brilhante para cima e regue o centro com um fio de azeite para o peixe não grudar. Transfira duas rosetas para o alumínio, regue com 1 colher (sopa) de azeite e 2 colheres (sopa) de vinho branco. Levante as extremidades do papel-alumínio e vá fechando as pontas para formar uma trouxinha bem vedada – assim os líquidos não vazam. Ela deve ficar alta para o vapor circular e cozinhar o peixe por igual.</li>
+                <li>Transfira os 2 papilotes para uma assadeira e leve ao forno para assar por 10 minutos – esse é o tempo certo para o peixe cozinhar e ainda ficar úmido. Retire do forno e abra os papilotes com cuidado para não se queimar com o vapor. Sirva as rosetas com lentilha, batatas murro de frigideira e espinafre refogado.</li>
+            </ol>
+        </div>
+    </div>
+  </dialog>
+
+  <dialog id="recipe19" class="recipe-modal">
+    <div class="modal-content">
+        <button class="close-x" onclick="closeRecipeModal('recipe19')">&times;</button>
+        <h2>Papilote de frango</h2>
+  
+        <div class="recipe-info">
+          <span><i class="fas fa-clock"></i> Preparo: 30 minutos</span>
+          <span><i class="fas fa-signal"></i> Dificuldade: Médio</span>
+          <span><i class="fas fa-dollar-sign"></i> Custo: Médio</span>
+        </div>
+  
+        <div class="recipe-details">
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>4 filés de peito de frango</li>
+                <li>2 cebolas</li>
+                <li>16 tomates sweet grape</li>
+                <li>4 ramos de tomilho</li>
+                <li>½ xícara (chá) de vinho branco</li>
+                <li>2 colheres (chá) de páprica doce</li>
+                <li> ½ colher (chá) de cominho</li>
+                <li>¼ de xícara (chá) de azeite</li>
+                <li>sal e pimenta-do-reino moída na hora a gosto</li>
+            </ul>
+            
+            <h3>Modo de Preparo:</h3>
+            <ol>
+                <li>Preaqueça o forno a 200 ºC (temperatura média). Separe papel-alumínio para preparar os papilotes.</li>
+                <li>Descasque e corte as cebolas em cubos médios. Lave os tomates e o tomilho. Corte 4 folhas de papel alumínio de cerca de 50 cm de comprimento.</li>
+                <li>Numa tigela, coloque os filés de frango e tempere com a páprica, o cominho, sal e pimenta-do-reino a gosto. Esfregue bem os filés com as mãos para temperar toda a superfície.</li>
+                <li>Para montar os papilotes: coloque uma folha de papel alumínio sobre um prato fundo, com a parte brilhante para cima. Coloque um filé de frango no centro, disponha ao lado 4 tomates e os cubos de ½ cebola. Junte 2 colheres (sopa) de vinho e 1 colher (sopa) de azeite. Tempere o legumes com um fio de azeite e uma pitada de sal.</li>
+                <li>Levante as extremidades do papel-alumínio e feche as pontas para formar uma trouxinha bem vedada – assim os líquidos e o vapor não escapam. Ela deve ficar alta para o vapor circular.</li>
+                <li>Transfira os papillotes para uma assadeira e leve ao forno para assar por 20 minutos – esse é o tempo certo para o frango cozinhar e ainda ficar úmido. Retire do forno e abra as trouxinhas com cuidado para não se queimar com o vapor. Sirva a seguir com os legumes e o molho que se formou no papilote.</li>
+            </ol>
+        </div>
+    </div>
+  </dialog>
+
+
+  <dialog id="no_results"> 
   <div class="no_results">
   <p>Nenhum resultado encontrado para a busca.</p>
   </div>
 </dialog>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
+
+<footer class="footer">
+  <div class="container">
+      <p>© 2024 Receitas da vovò. Todos os direitos reservados a Eloise, Leivas, Bordin & Sarah.</p>
+  </div>
+</footer>
+
 </body>
 </html>
