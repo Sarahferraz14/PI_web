@@ -2,10 +2,9 @@
 
 1. Nome do trabalho: 
     RECEITAS DA VOVÓ
-      site de receitas de comidas aconchegantes.
 
 2. Descrição:
-     Nosso site de receitas oferece para o usuário uma variedade de recitas, tanto fáceis quanto difíceis, para ele escolher e poder trasnformar a sua cozinha. Contendo receitas de família, nosso site ele tardições de nossas famílias para a sua, sem perder a exencoa de carinho e amor pelo saber e beleza.
+     Nosso site de receitas oferece para o usuário uma variedade de recitas aconchegantes, tanto fáceis quanto difíceis, para ele escolher e poder trasnformar a sua cozinha. Contendo receitas de família, nosso site trás tradições de nossas famílias para a sua, sem perder o tempero, essência, carinho e amor pelo sabor e beleza.
 
 3. Uso:
      Para poder acesar nosso site acesse:
