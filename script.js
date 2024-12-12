@@ -2,6 +2,36 @@ let currentIndex = 0;
 const imagesToShow = 4; // Número de imagens visíveis ao mesmo tempo
 const images = document.querySelectorAll(".carousel img");
 const carousel = document.querySelector(".carousel");
+const searchInput = document.getElementById('search');
+
+searchInput.addEventListener('input', (event) => {
+  const value = event.target.value
+
+  const itens = document.querySelectorAll('.recipe-field');
+  const noResults = document.getElementById('no_results');
+
+  let hasResults = false;
+  
+  itens.forEach(recipe => {
+    if(formaString(recipe.textContent).indexOf(value) !== -1) {
+      recipe.style.display = 'block';
+
+      hasResults = true;
+    } else {
+      recipe.style.display = 'none';
+    }
+ })
+
+ if (hasResults)  {
+  noResults.style.display = 'none';
+ } else {
+  noResults.style.display = 'block';
+ }
+});
+
+function formaString(value) {
+    return value.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
 
 const searchInput = document.getElementById('searchInput');
 
