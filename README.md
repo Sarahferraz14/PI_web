@@ -1,4 +1,4 @@
-# PI_web
+PROJETO FINAL DE PI: DESENVOLVIMENTO WEB
 
 1. Nome do trabalho: 
     RECEITAS DA VOVÓ
