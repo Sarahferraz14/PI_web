@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receitas Fáceis</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Receitas da vovó</title>
+    <link rel="stylesheet" href="css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Hubballi&display=swap" rel="stylesheet">
@@ -17,55 +17,61 @@
             <nav class="nav-menu">
                 <ul>
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="receitas.html">Receitas</a></li>
-                    <li><a href="dietas.html">Dietas</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="html/receitas.html">Receitas</a></li>
+                    <li><a href="html/dietas.html">Dietas</a></li>
+                    <li><a href="html/sobre.html">Sobre</a></li>
                 </ul>
             </nav>
-            <img src="logo.jpg" alt="logo">
+            <img src="Imagens/logo.jpg" alt="logo">
 
     </header>
 
 
     <!-- Destaque -->
-    <section class="highlight">
+    <div class="highlight">
         <div class="container">
             <h1>Descubra receitas práticas e deliciosas</h1>
             <p>Escolha a receita perfeita para seu dia a dia e surpreenda na cozinha!</p>
             <p>Cada receita foi retirada do antigo livro de receits da Dona Marília, cada uma com o sabor de nossa casa para a sua.</p>
         </div>
-    </section>
+    </div>
 
+<div class="container">
+
+<h1>Receitas em Destaque</h1>
+</div>
     <!-- Seção de Receitas -->
-    <section id="receitas" class="receitas">
-        <div class="container">
-            <h1>Receitas em Destaque</h1>
-            <div class="grid">
-                <div class="card">
-                    <img src="https://i.panelinha.com.br/i1/bk-7667-cp2022-12-08-0848.webp" alt="Receita 1">
-                    <h3>Papilote de Frango</h3>
-                    
-                </div>
-                <div class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ33UiahpMCUxIdB6BXbfCTlbQ62Hb8c8ibug&s" alt="Receita 2">
-                    <h3>Clafoutis de Abobrinha</h3>
-                </div>
-                <div class="card">
-                    <img src="https://renata.com.br/images/receitas/140/renata-imagem-receitas-espaguete-ao-molho-sugo-share.jpg" alt="Receita 3">
-                    <h3>Espaguete com Molho</h3>
-                </div>
-                <div class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTawBkd_0hRIojsevBSPa-FqXcOIzHIn5UMeQ&s" alt="Receita 4">
-                    <h3>Roseta de Peixe</h3>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="recipes-container">
+              
+                  <div class="recipe-field salgada">
+                    <div class="card">
+                      <img src="../Imagens/espaguete com molho.jpg" alt="Receita 3">
+                      <h2>Espaguete com Molho</h2>
+                    <button onclick="openRecipeModal('recipe17')">Ver receita</button>
+                  </div>
+                  </div>
+              
+                  <div class="recipe-field salgada">
+                    <div class="card">
+                      <img src="../Imagens/roseta de peixe.jpg" alt="Receita 4">
+                      <h2>Roseta de Peixe</h2>
+                    <button onclick="openRecipeModal('recipe18')">Ver receita</button>
+                  </div>
+                  </div>
+              
+                  <div class="recipe-field salgada">
+                    <div class="card">
+                      <img src="../Imagens/papilote de frango.jpg" alt="Receita 1">
+                      <h2>Papilote de Frango</h2>
+                    <button onclick="openRecipeModal('recipe19')">Ver receita</button>
+                  </div>
+                  </div>
+              
+    </div>
 
 
     <div class="carrossel-container">
         <h1>Recomendações de videos</h1>
-        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
         
         <div class="carrossel">
             <!-- Embeds de vídeos do YouTube -->
@@ -77,13 +83,138 @@
              </div>
             <div class="video">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/sc6HlkFACIM?si=gniYi6OvAPYkxGXq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-             </div>
+            </div>s
         </div>
         
-        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+
     </div>
 
-    <script src="script.js"></script>
+    
+    
+      <dialog id="recipe17" class="recipe-modal">
+        <div class="modal-content">
+            <button class="close-x" onclick="closeRecipeModal('recipe17')">&times;</button>
+            <h2>Macarão com mollho </h2>
+      
+            <div class="recipe-info">
+              <span><i class="fas fa-clock"></i> Preparo: 40 minutos</span>
+              <span><i class="fas fa-signal"></i> Dificuldade: Fácil</span>
+              <span><i class="fas fa-dollar-sign"></i> Custo: Médio</span>
+            </div>
+      
+            <div class="recipe-details">
+                <h3>Ingredientes:</h3>
+                <h4>Molho:</h4>
+                <ul>
+                    <li>3 kg de tomate italiano maduro</li>
+                    <li>1½ cebola</li>
+                    <li>2 colheres (sopa) de azeite</li>
+                    <li>sal e pimenta-do-reino moída na hora a gosto</li>
+                </ul>
+    
+                <h4>Macarão:</h4>
+                <ul>
+                    <li>500 g de macarrão espaguete</li>
+                    <li></li>folhas de manjericão a gosto para servir</li>
+                    <li>burrata para servir</li>
+                    <li></li>azeite, sal e pimenta-do-reino moída na hora a gosto </li>
+                </ul>
+                
+                <h3>Modo de Preparo:</h3>
+                <h4>Molho:</h4>
+                <ol>
+                  <li>Descasque e pique fino as cebolas.</li>
+                  <li>Leve uma panela grande com água ao fogo alto para ferver. Enquanto isso, lave os tomates e, com uma faca, corte um X na base de cada um. Separe uma tigela grande com água e gelo.</li>
+                  <li>Assim que a água começar a ferver, mergulhe cerca de 6 tomates de cada vez e deixe cozinhar até que a pele comece a rachar. Com uma escumadeira, transfira os tomates para a tigela com água e gelo — com o choque térmico, fica mais fácil descascar. A partir do corte em X, puxe e descarte a pele. Reserve os tomates pelados numa tigela e repita o processo com o restante — reponha o gelo na tigela quantas vezes forem necessárias para manter a água bem fria.</li>
+                  <li>Leve uma panela grande ao fogo médio para aquecer. Regue com o azeite, adicione a cebola picada e tempere com uma pitada de sal e uma de pimenta. Deixe a cebola cozinhar por cerca de 10 minutos, mexendo de vez em quando, até ficar bem macia e com a cor mais amarelada — essa etapa do refogado é essencial, porque deixa a cebola com o sabor mais adocicado e, com isso, o molho menos ácido.</li>
+                  <li>Enquanto isso, corte os tomates ao meio e descarte as sementes. Transfira os tomates para o liquidificador em etapas e bata sem acrescentar água: para preparar um molho mais rústico, com pedaços, bata no modo pulsar para triturar; se preferir um molho tradicional mais fluido, bata até ficar liso.</li>
+                  <li>Junte os tomates batidos à cebola refogada, tempere com sal e misture bem. Deixe cozinhar em fogo médio até começar a ferver. Abaixe o fogo e deixe cozinhar por cerca de 1 hora, mexendo de vez em quando, até que o molho fique encorpado — atenção, dependendo do tamanho de sua panela, mais funda ou mais larga, o tempo total de cozimento pode variar.</li>
+                  <li>Prove o molho e, se necessário, acerte o sal. Desligue o fogo e reserve.</li>
+                </ol>
+                <h4>Macarão:</h4>
+                <ol>
+                  <li>Ferva o leite com a manteiga.</li>
+                  <li>Em um liquidificador, bata a ricota e vá adicionando o leite fervente para desfazê-la completamente.</li>
+                  <li>Acrescente o leite condensado e os ovos, e volte a bater.</li>
+                  <li>Despeje sobre a Massa.</li>
+                  <li>Leve ao forno à temperatura de 180°C por cerca de 30 minutos</li>
+                </ol>
+            </div>
+        </div>
+      </dialog>
+    
+      <dialog id="recipe18" class="recipe-modal">
+        <div class="modal-content">
+            <button class="close-x" onclick="closeRecipeModal('recipe18')">&times;</button>
+            <h2>Roseta de peixe </h2>
+      
+            <div class="recipe-info">
+              <span><i class="fas fa-clock"></i> Preparo: 30 minutos</span>
+              <span><i class="fas fa-signal"></i> Dificuldade: Médio</span>
+              <span><i class="fas fa-dollar-sign"></i> Custo: Alto</span>
+            </div>
+      
+            <div class="recipe-details">
+                <h3>Ingredientes:</h3>
+                <h4>Roseta de peixe: </h4>
+                <ul>
+                    <li>4 filés de pescada branca (cerca de 80 g cada)</li>
+                      <li>¼ de xícara (chá) de vinho branco</li>
+                      <li>azeite a gosto</li>
+                      <li>sal e pimenta-do-reino moída na hora a gosto</li>
+                </ul>
+                
+                <h3>Modo de Preparo:</h3>
+                <ol>
+                    <li>TPreaqueça o forno a 180 ºC (temperatura média).</li>
+                    <li>Separe alguns palitos de dente para a montagem das rosetas. Corte 2 pedaços grandes de papel alumínio de cerca de 50 cm.</li>
+                    <li>Tempere os filés de peixe com sal e pimenta a gosto. Para montar as rosetas: corte cada filé ao meio, no sentido do comprimento, formando duas tiras. Junte a ponta de uma com a ponta da outra, formando uma tira longa. Enrole a tira sobre ela mesma, formando a roseta, e prenda com palitos de dente. Repita com os outros filés para formar 4 rosetas.</li>
+                    <li>Para montar os papilotes: num prato fundo, coloque uma folha de papel-alumínio, com a parte brilhante para cima e regue o centro com um fio de azeite para o peixe não grudar. Transfira duas rosetas para o alumínio, regue com 1 colher (sopa) de azeite e 2 colheres (sopa) de vinho branco. Levante as extremidades do papel-alumínio e vá fechando as pontas para formar uma trouxinha bem vedada – assim os líquidos não vazam. Ela deve ficar alta para o vapor circular e cozinhar o peixe por igual.</li>
+                    <li>Transfira os 2 papilotes para uma assadeira e leve ao forno para assar por 10 minutos – esse é o tempo certo para o peixe cozinhar e ainda ficar úmido. Retire do forno e abra os papilotes com cuidado para não se queimar com o vapor. Sirva as rosetas com lentilha, batatas murro de frigideira e espinafre refogado.</li>
+                </ol>
+            </div>
+        </div>
+      </dialog>
+    
+      <dialog id="recipe19" class="recipe-modal">
+        <div class="modal-content">
+            <button class="close-x" onclick="closeRecipeModal('recipe19')">&times;</button>
+            <h2>Papilote de frango</h2>
+      
+            <div class="recipe-info">
+              <span><i class="fas fa-clock"></i> Preparo: 30 minutos</span>
+              <span><i class="fas fa-signal"></i> Dificuldade: Médio</span>
+              <span><i class="fas fa-dollar-sign"></i> Custo: Médio</span>
+            </div>
+      
+            <div class="recipe-details">
+                <h3>Ingredientes:</h3>
+                <ul>
+                    <li>4 filés de peito de frango</li>
+                    <li>2 cebolas</li>
+                    <li>16 tomates sweet grape</li>
+                    <li>4 ramos de tomilho</li>
+                    <li>½ xícara (chá) de vinho branco</li>
+                    <li>2 colheres (chá) de páprica doce</li>
+                    <li> ½ colher (chá) de cominho</li>
+                    <li>¼ de xícara (chá) de azeite</li>
+                    <li>sal e pimenta-do-reino moída na hora a gosto</li>
+                </ul>
+                
+                <h3>Modo de Preparo:</h3>
+                <ol>
+                    <li>Preaqueça o forno a 200 ºC (temperatura média). Separe papel-alumínio para preparar os papilotes.</li>
+                    <li>Descasque e corte as cebolas em cubos médios. Lave os tomates e o tomilho. Corte 4 folhas de papel alumínio de cerca de 50 cm de comprimento.</li>
+                    <li>Numa tigela, coloque os filés de frango e tempere com a páprica, o cominho, sal e pimenta-do-reino a gosto. Esfregue bem os filés com as mãos para temperar toda a superfície.</li>
+                    <li>Para montar os papilotes: coloque uma folha de papel alumínio sobre um prato fundo, com a parte brilhante para cima. Coloque um filé de frango no centro, disponha ao lado 4 tomates e os cubos de ½ cebola. Junte 2 colheres (sopa) de vinho e 1 colher (sopa) de azeite. Tempere o legumes com um fio de azeite e uma pitada de sal.</li>
+                    <li>Levante as extremidades do papel-alumínio e feche as pontas para formar uma trouxinha bem vedada – assim os líquidos e o vapor não escapam. Ela deve ficar alta para o vapor circular.</li>
+                    <li>Transfira os papillotes para uma assadeira e leve ao forno para assar por 20 minutos – esse é o tempo certo para o frango cozinhar e ainda ficar úmido. Retire do forno e abra as trouxinhas com cuidado para não se queimar com o vapor. Sirva a seguir com os legumes e o molho que se formou no papilote.</li>
+                </ol>
+            </div>
+        </div>
+      </dialog>
+
+    <script src="js/script.js"></script>
     <!-- Rodapé -->
     <footer class="footer">
         <div class="container">
