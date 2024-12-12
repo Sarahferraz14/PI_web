@@ -2,7 +2,7 @@ let currentIndex = 0;
 const imagesToShow = 4; // Número de imagens visíveis ao mesmo tempo
 const images = document.querySelectorAll(".carousel img");
 const carousel = document.querySelector(".carousel");
-const searchInput = document.getElementById('search');
+const searchInput = document.getElementById('searchInput');
 
 searchInput.addEventListener('input', (event) => {
   const value = event.target.value
@@ -33,7 +33,6 @@ function formaString(value) {
     return value.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
-const searchInput = document.getElementById('searchInput');
 
 searchInput.addEventListener('input', (event) => {
   const value = event.target.value
